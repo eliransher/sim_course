@@ -1,0 +1,14 @@
+# Python / IDE
+__pycache__/
+*.pyc
+venv/
+.venv/
+.idea/
+.ipynb_checkpoints/
+
+# Office lock files
+~$*
+
+# lectures/notebooks: only the notebooks themselves
+lectures/notebooks/*
+!lectures/notebooks/*.ipynb

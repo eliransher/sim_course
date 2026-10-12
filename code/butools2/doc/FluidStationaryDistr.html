@@ -1,0 +1,674 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>butools.mam.FluidStationaryDistr &mdash; butools 2.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="butools 2.0 documentation" href="index.html"/>
+        <link rel="up" title="Matrix-Analytic Methods (butools.mam)" href="mam.html"/>
+        <link rel="next" title="Tools for the Analysis of Queues (butools.queues)" href="queues.html"/>
+        <link rel="prev" title="butools.mam.GeneralFluidSolve" href="GeneralFluidSolve.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> butools
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities (<code class="docutils literal"><span class="pre">butools.utils</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#solution-of-markov-chains-and-rational-processes">Solution of Markov chains and rational processes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mc.html">Markov Chains (<code class="docutils literal"><span class="pre">butools.mc</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mc.html#markov-chains-and-rational-processes">Markov chains and rational processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc.html#properties-of-markov-chains-and-rational-processes">Properties of Markov chains and rational processes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CTMCSolve.html">butools.mc.CTMCSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DTMCSolve.html">butools.mc.DTMCSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CRPSolve.html">butools.mc.CRPSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DRPSolve.html">butools.mc.DRPSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckGenerator.html">butools.mc.CheckGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckProbMatrix.html">butools.mc.CheckProbMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckProbVector.html">butools.mc.CheckProbVector</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="moments.html">Moment expressions (<code class="docutils literal"><span class="pre">butools.moments</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="moments.html#moment-expressions">Moment expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moments.html#conversion-routines-between-various-moment-expressions">Conversion routines between various moment expressions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="NormMomsFromMoms.html">butools.moments.NormMomsFromMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomsFromNormMoms.html">butools.moments.MomsFromNormMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ReducedMomsFromMoms.html">butools.moments.ReducedMomsFromMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomsFromReducedMoms.html">butools.moments.MomsFromReducedMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HankelMomsFromMoms.html">butools.moments.HankelMomsFromMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomsFromHankelMoms.html">butools.moments.MomsFromHankelMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FactorialMomsFromMoms.html">butools.moments.FactorialMomsFromMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomsFromFactorialMoms.html">butools.moments.MomsFromFactorialMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JFactorialMomsFromJMoms.html">butools.moments.JFactorialMomsFromJMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JMomsFromJFactorialMoms.html">butools.moments.JMomsFromJFactorialMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMoments.html">butools.moments.CheckMoments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reptrans.html">Representation Transformation Tools (<code class="docutils literal"><span class="pre">butools.reptrans</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reptrans.html#tools-for-representation-transformation">Tools for representation transformation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SimilarityMatrix.html">butools.reptrans.SimilarityMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimilarityMatrixForVectors.html">butools.reptrans.SimilarityMatrixForVectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransformToMonocyclic.html">butools.reptrans.TransformToMonocyclic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransformToAcyclic.html">butools.reptrans.TransformToAcyclic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExtendToMarkovian.html">butools.reptrans.ExtendToMarkovian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FindMarkovianRepresentation.html">butools.reptrans.FindMarkovianRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MStaircase.html">butools.reptrans.MStaircase</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ph.html">Tools for Phase-Type Distributions (<code class="docutils literal"><span class="pre">butools.ph</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#phase-type-and-matrix-exponential-distributions">Phase-type and matrix-exponential distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#simple-statistical-properties-and-tools">Simple statistical properties and tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#inverse-characterization-tools">Inverse characterization tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#representation-transformation-methods">Representation transformation methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#minimal-representations">Minimal representations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MomentsFromME.html">butools.ph.MomentsFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomentsFromPH.html">butools.ph.MomentsFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromME.html">butools.ph.CdfFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromPH.html">butools.ph.CdfFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PdfFromME.html">butools.ph.PdfFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PdfFromPH.html">butools.ph.PdfFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IntervalPdfFromPH.html">butools.ph.IntervalPdfFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomPH.html">butools.ph.RandomPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckPHRepresentation.html">butools.ph.CheckPHRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMERepresentation.html">butools.ph.CheckMERepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMEPositiveDensity.html">butools.ph.CheckMEPositiveDensity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromPH.html">butools.ph.SamplesFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromPH.html">butools.ph.ImageFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="APHFrom2Moments.html">butools.ph.APHFrom2Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="APHFrom3Moments.html">butools.ph.APHFrom3Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PH2From3Moments.html">butools.ph.PH2From3Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PH3From5Moments.html">butools.ph.PH3From5Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MEFromMoments.html">butools.ph.MEFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="APH2ndMomentLowerBound.html">butools.ph.APH2ndMomentLowerBound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="APH3rdMomentLowerBound.html">butools.ph.APH3rdMomentLowerBound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="APH3rdMomentUpperBound.html">butools.ph.APH3rdMomentUpperBound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AcyclicPHFromME.html">butools.ph.AcyclicPHFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromPH2.html">butools.ph.CanonicalFromPH2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromPH3.html">butools.ph.CanonicalFromPH3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MonocyclicPHFromME.html">butools.ph.MonocyclicPHFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PHFromME.html">butools.ph.PHFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MEOrder.html">butools.ph.MEOrder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MEOrderFromMoments.html">butools.ph.MEOrderFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MinimalRepFromME.html">butools.ph.MinimalRepFromME</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dph.html">Tools for Discrete Phase-Type Distributions (<code class="docutils literal"><span class="pre">butools.dph</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dph.html#discrete-phase-type-and-matrix-geometric-distributions">Discrete phase-type and matrix-geometric distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dph.html#simple-statistical-properties-and-tools">Simple statistical properties and tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dph.html#inverse-characterization-tools">Inverse characterization tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dph.html#representation-transformation-methods">Representation transformation methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MomentsFromMG.html">butools.dph.MomentsFromMG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomentsFromDPH.html">butools.dph.MomentsFromDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromMG.html">butools.dph.CdfFromMG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromDPH.html">butools.dph.CdfFromDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PmfFromMG.html">butools.dph.PmfFromMG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PmfFromDPH.html">butools.dph.PmfFromDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomDPH.html">butools.dph.RandomDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckDPHRepresentation.html">butools.dph.CheckDPHRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMGRepresentation.html">butools.dph.CheckMGRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromDPH.html">butools.dph.SamplesFromDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromDPH.html">butools.dph.ImageFromDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DPH2From3Moments.html">butools.dph.DPH2From3Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DPH3From5Moments.html">butools.dph.DPH3From5Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MGFromMoments.html">butools.dph.MGFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AcyclicDPHFromMG.html">butools.dph.AcyclicDPHFromMG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromDPH2.html">butools.dph.CanonicalFromDPH2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromDPH3.html">butools.dph.CanonicalFromDPH3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DPHFromMG.html">butools.dph.DPHFromMG</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="map.html">Tools for Markovian Arrival Processes (<code class="docutils literal"><span class="pre">butools.map</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="map.html#markovian-arrival-processes-and-rational-arrival-processes">Markovian arrival processes and rational arrival processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html#simple-statistical-properties-and-tools">Simple statistical properties and tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html#inverse-characterization-tools">Inverse characterization tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html#representation-transformation-methods">Representation transformation methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromMAP.html">butools.map.MarginalDistributionFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromRAP.html">butools.map.MarginalDistributionFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromMMAP.html">butools.map.MarginalDistributionFromMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromMRAP.html">butools.map.MarginalDistributionFromMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromMAP.html">butools.map.MarginalMomentsFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromRAP.html">butools.map.MarginalMomentsFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromMMAP.html">butools.map.MarginalMomentsFromMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromMRAP.html">butools.map.MarginalMomentsFromMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagCorrelationsFromMAP.html">butools.map.LagCorrelationsFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagCorrelationsFromRAP.html">butools.map.LagCorrelationsFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromMAP.html">butools.map.LagkJointMomentsFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromRAP.html">butools.map.LagkJointMomentsFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromMMAP.html">butools.map.LagkJointMomentsFromMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromMRAP.html">butools.map.LagkJointMomentsFromMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomMAP.html">butools.map.RandomMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomMMAP.html">butools.map.RandomMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMAPRepresentation.html">butools.map.CheckMAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckRAPRepresentation.html">butools.map.CheckRAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMMAPRepresentation.html">butools.map.CheckMMAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMRAPRepresentation.html">butools.map.CheckMRAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromMAP.html">butools.map.SamplesFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromMMAP.html">butools.map.SamplesFromMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromMAP.html">butools.map.ImageFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromMMAP.html">butools.map.ImageFromMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RAPFromMoments.html">butools.map.RAPFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MRAPFromMoments.html">butools.map.MRAPFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RAPFromMomentsAndCorrelations.html">butools.map.RAPFromMomentsAndCorrelations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAP2FromMoments.html">butools.map.MAP2FromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAP2CorrelationBounds.html">butools.map.MAP2CorrelationBounds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPFromFewMomentsAndCorrelations.html">butools.map.MAPFromFewMomentsAndCorrelations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromMAP2.html">butools.map.CanonicalFromMAP2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPFromRAP.html">butools.map.MAPFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MMAPFromMRAP.html">butools.map.MMAPFromMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MinimalRepFromRAP.html">butools.map.MinimalRepFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MinimalRepFromMRAP.html">butools.map.MinimalRepFromMRAP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dmap.html">Tools for Discrete Markovian Arrival Processes (<code class="docutils literal"><span class="pre">butools.dmap</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dmap.html#discrete-markovian-arrival-processes-and-rational-arrival-processes">Discrete Markovian arrival processes and rational arrival processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmap.html#simple-statistical-properties-and-tools">Simple statistical properties and tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmap.html#inverse-characterization-tools">Inverse characterization tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmap.html#representation-transformation-methods">Representation transformation methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromDMAP.html">butools.dmap.MarginalDistributionFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromDRAP.html">butools.dmap.MarginalDistributionFromDRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromDMMAP.html">butools.dmap.MarginalDistributionFromDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromDMRAP.html">butools.dmap.MarginalDistributionFromDMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromDMAP.html">butools.dmap.MarginalMomentsFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromDRAP.html">butools.dmap.MarginalMomentsFromDRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromDMMAP.html">butools.dmap.MarginalMomentsFromDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromDMRAP.html">butools.dmap.MarginalMomentsFromDMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagCorrelationsFromDMAP.html">butools.dmap.LagCorrelationsFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagCorrelationsFromDRAP.html">butools.dmap.LagCorrelationsFromDRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromDMAP.html">butools.dmap.LagkJointMomentsFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromDRAP.html">butools.dmap.LagkJointMomentsFromDRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromDMMAP.html">butools.dmap.LagkJointMomentsFromDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromDMRAP.html">butools.dmap.LagkJointMomentsFromDMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomDMAP.html">butools.dmap.RandomDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomDMMAP.html">butools.dmap.RandomDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckDMAPRepresentation.html">butools.dmap.CheckDMAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckDRAPRepresentation.html">butools.dmap.CheckDRAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckDMMAPRepresentation.html">butools.dmap.CheckDMMAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckDMRAPRepresentation.html">butools.dmap.CheckDMRAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromDMAP.html">butools.dmap.SamplesFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromDMMAP.html">butools.dmap.SamplesFromDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromDMAP.html">butools.dmap.ImageFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromDMMAP.html">butools.dmap.ImageFromDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DRAPFromMoments.html">butools.dmap.DRAPFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DMRAPFromMoments.html">butools.dmap.DMRAPFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DMAP2FromMoments.html">butools.dmap.DMAP2FromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromDMAP2.html">butools.dmap.CanonicalFromDMAP2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DMAPFromDRAP.html">butools.dmap.DMAPFromDRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DMMAPFromDMRAP.html">butools.dmap.DMMAPFromDMRAP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="trace.html">Tools for the Analysis of Measurement Traces (<code class="docutils literal"><span class="pre">butools.trace</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="trace.html#analysis-of-measurement-traces">Analysis of measurement traces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trace.html#tools-for-the-analysis-of-measurement-traces">Tools for the analysis of measurement traces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromTrace.html">butools.trace.CdfFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromWeightedTrace.html">butools.trace.CdfFromWeightedTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PdfFromTrace.html">butools.trace.PdfFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PdfFromWeightedTrace.html">butools.trace.PdfFromWeightedTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromTrace.html">butools.trace.MarginalMomentsFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromWeightedTrace.html">butools.trace.MarginalMomentsFromWeightedTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagCorrelationsFromTrace.html">butools.trace.LagCorrelationsFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromTrace.html">butools.trace.LagCorrelationsFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IATimesFromCummulative.html">butools.trace.IATimesFromCummulative</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fitting.html">Tools for fitting measurement traces (<code class="docutils literal"><span class="pre">butools.fitting</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fitting.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitting.html#functions-for-fitting">Functions for fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitting.html#functions-for-evaluating-the-results-of-fitting">Functions for evaluating the results of fitting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PHFromTrace.html">butools.fitting.PHFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPFromTrace.html">butools.fitting.MAPFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SquaredDifference.html">butools.fitting.SquaredDifference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RelativeEntropy.html">butools.fitting.RelativeEntropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmpiricalSquaredDifference.html">butools.fitting.EmpiricalSquaredDifference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmpiricalRelativeEntropy.html">butools.fitting.EmpiricalRelativeEntropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LikelihoodFromTrace.html">butools.fitting.LikelihoodFromTrace</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="mam.html">Matrix-Analytic Methods (<code class="docutils literal"><span class="pre">butools.mam</span></code>)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mam.html#quasi-birth-death-processes">Quasi Birth-Death Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#m-g-1-and-g-m-1-type-markov-chains">M/G/1 and G/M/1 Type Markov Chains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#markovian-fluid-models">Markovian Fluid Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#functions-to-solve-qbds">Functions to solve QBDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#functions-to-solve-m-g-1-and-g-m-1-type-markov-chains">Functions to solve M/G/1 and G/M/1 type Markov chains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#functions-to-solve-markovian-fluid-models">Functions to solve Markovian fluid models</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="mam.html#refereces">Refereces</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="QBDFundamentalMatrices.html">butools.mam.QBDFundamentalMatrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QBDSolve.html">butools.mam.QBDSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QBDStationaryDistr.html">butools.mam.QBDStationaryDistr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MG1FundamentalMatrix.html">butools.mam.MG1FundamentalMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MG1StationaryDistr.html">butools.mam.MG1StationaryDistr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GM1FundamentalMatrix.html">butools.mam.GM1FundamentalMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GM1StationaryDistr.html">butools.mam.GM1StationaryDistr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FluidFundamentalMatrices.html">butools.mam.FluidFundamentalMatrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FluidSolve.html">butools.mam.FluidSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GeneralFluidSolve.html">butools.mam.GeneralFluidSolve</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">butools.mam.FluidStationaryDistr</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="queues.html">Tools for the Analysis of Queues (<code class="docutils literal"><span class="pre">butools.queues</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="queues.html#type-of-queues-supported-by-butools">Type of queues supported by BuTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html#performance-measures">Performance measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html#functions-for-discrete-queues">Functions for discrete queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html#functions-for-continuous-queues">Functions for continuous queues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="QBDQueue.html">butools.queues.QBDQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPMAP1.html">butools.queues.MAPMAP1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MMAPPH1FCFS.html">butools.queues.MMAPPH1FCFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MMAPPH1PRPR.html">butools.queues.MMAPPH1PRPR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MMAPPH1NPPR.html">butools.queues.MMAPPH1NPPR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FluidQueue.html">butools.queues.FluidQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FluidQueue.html">butools.queues.FluidQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FluFluQueue.html">butools.queues.FluFluQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FluFluQueue.html">butools.queues.FluFluQueue</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">butools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="mam.html">Matrix-Analytic Methods (<code class="docutils literal"><span class="pre">butools.mam</span></code>)</a> &raquo;</li>
+      
+    <li>butools.mam.FluidStationaryDistr</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/FluidStationaryDistr.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="butools-mam-fluidstationarydistr">
+<h1>butools.mam.FluidStationaryDistr<a class="headerlink" href="#butools-mam-fluidstationarydistr" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="butools.mam.FluidStationaryDistr">
+<code class="descclassname">butools.mam.</code><code class="descname">FluidStationaryDistr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#butools.mam.FluidStationaryDistr" title="Permalink to this definition">¶</a></dt>
+<dd><table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Matlab:</td>
+<td><code class="code docutils literal"><span class="pre">pi</span> <span class="pre">=</span> <span class="pre">FluidStationaryDistr</span> <span class="pre">(mass0,</span> <span class="pre">ini,</span> <span class="pre">K,</span> <span class="pre">clo,</span> <span class="pre">x)</span></code></td>
+</tr>
+<tr class="row-even"><td>Mathematica:</td>
+<td><code class="code docutils literal"><span class="pre">pi</span> <span class="pre">=</span> <span class="pre">FluidStationaryDistr</span> <span class="pre">[mass0,</span> <span class="pre">ini,</span> <span class="pre">K,</span> <span class="pre">clo,</span> <span class="pre">x]</span></code></td>
+</tr>
+<tr class="row-odd"><td>Python/Numpy:</td>
+<td><code class="code docutils literal"><span class="pre">pi</span> <span class="pre">=</span> <span class="pre">FluidStationaryDistr</span> <span class="pre">(mass0,</span> <span class="pre">ini,</span> <span class="pre">K,</span> <span class="pre">clo,</span> <span class="pre">x)</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the stationary distribution of a Markovian
+fluid model at the given points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mass0</strong> : matrix, shape (1,Np+Nm)</p>
+<blockquote>
+<div><p>The stationary probability vector of zero level</p>
+</div></blockquote>
+<p><strong>ini</strong> : matrix, shape (1,Np)</p>
+<blockquote>
+<div><p>The initial vector of the stationary density</p>
+</div></blockquote>
+<p><strong>K</strong> : matrix, shape (Np,Np)</p>
+<blockquote>
+<div><p>The matrix parameter of the stationary density</p>
+</div></blockquote>
+<p><strong>clo</strong> : matrix, shape (Np,Np+Nm)</p>
+<blockquote>
+<div><p>The closing matrix of the stationary density</p>
+</div></blockquote>
+<p><strong>x</strong> : vector, length (K)</p>
+<blockquote>
+<div><p>The distribution function is computed at these
+points.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pi</strong> : matrix, shape (K,Nm+Np)</p>
+<blockquote class="last">
+<div><p>The ith row of pi is the probability that the fluid
+level is less than or equal to x(i), while being in
+different states of the background process.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>For Matlab:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">;</span> <span class="mf">6.</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">;</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">;</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">;</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="o">-</span><span class="mf">13.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">;</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.</span><span class="p">];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">;</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">;</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">;</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">;</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">;</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.</span><span class="p">];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">:</span><span class="mf">1.0</span><span class="p">:</span><span class="mf">30.0</span><span class="p">);</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">mass0</span><span class="p">,</span> <span class="n">ini</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">clo</span><span class="p">]</span> <span class="o">=</span> <span class="n">GeneralFluidSolve</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">R</span><span class="p">);</span>
+<span class="go">Final Residual Error for Psi:    7.6328e-16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">mass0</span><span class="p">);</span>
+<span class="go">            0     0.082246     0.069492            0     0.023812     0.020724</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">ini</span><span class="p">);</span>
+<span class="go">      0.70195      0.20505</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">K</span><span class="p">);</span>
+<span class="go">      -2.4698       1.1349</span>
+<span class="go">        1.295      -1.1686</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">clo</span><span class="p">);</span>
+<span class="go">          0.5     0.061087     0.054574            0      0.01618     0.012595</span>
+<span class="go">            0     0.055389     0.043116      0.16667     0.038913     0.032631</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">FluidStationaryDistr</span><span class="p">(</span><span class="n">mass0</span><span class="p">,</span> <span class="n">ini</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">clo</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+<span class="go">            0     0.082246     0.069492            0     0.023812     0.020724</span>
+<span class="go">       0.1768      0.11964      0.10108     0.047524     0.040629     0.034482</span>
+<span class="go">      0.25236      0.14136      0.11905     0.085106     0.051849     0.043744</span>
+<span class="go">      0.29931      0.15521      0.13049      0.10952     0.059068     0.049706</span>
+<span class="go">      0.32938       0.1641      0.13783       0.1252     0.063703     0.053534</span>
+<span class="go">      0.34868       0.1698      0.14254      0.13527     0.066678     0.055991</span>
+<span class="go">      0.36107      0.17346      0.14557      0.14173     0.068587     0.057568</span>
+<span class="go">      0.36902      0.17581      0.14751      0.14588     0.069813     0.058581</span>
+<span class="go">      0.37413      0.17732      0.14875      0.14854     0.070599      0.05923</span>
+<span class="go">       0.3774      0.17829      0.14955      0.15025     0.071104     0.059647</span>
+<span class="go">      0.37951      0.17891      0.15007      0.15134     0.071428     0.059915</span>
+<span class="go">      0.38086      0.17931       0.1504      0.15205     0.071636     0.060087</span>
+<span class="go">      0.38172      0.17956      0.15061       0.1525      0.07177     0.060197</span>
+<span class="go">      0.38228      0.17973      0.15074      0.15279     0.071856     0.060268</span>
+<span class="go">      0.38264      0.17983      0.15083      0.15298     0.071911     0.060313</span>
+<span class="go">      0.38286       0.1799      0.15089       0.1531     0.071946     0.060343</span>
+<span class="go">      0.38301      0.17995      0.15092      0.15317     0.071969     0.060361</span>
+<span class="go">      0.38311      0.17997      0.15095      0.15322     0.071983     0.060373</span>
+<span class="go">      0.38317      0.17999      0.15096      0.15325     0.071993     0.060381</span>
+<span class="go">      0.38321         0.18      0.15097      0.15327     0.071999     0.060386</span>
+<span class="go">      0.38323      0.18001      0.15098      0.15329     0.072002     0.060389</span>
+<span class="go">      0.38325      0.18001      0.15098       0.1533     0.072005     0.060391</span>
+<span class="go">      0.38326      0.18002      0.15098       0.1533     0.072006     0.060393</span>
+<span class="go">      0.38326      0.18002      0.15098       0.1533     0.072007     0.060393</span>
+<span class="go">      0.38327      0.18002      0.15099      0.15331     0.072008     0.060394</span>
+<span class="go">      0.38327      0.18002      0.15099      0.15331     0.072009     0.060394</span>
+<span class="go">      0.38327      0.18002      0.15099      0.15331     0.072009     0.060394</span>
+<span class="go">      0.38327      0.18002      0.15099      0.15331     0.072009     0.060395</span>
+<span class="go">      0.38327      0.18002      0.15099      0.15331     0.072009     0.060395</span>
+<span class="go">      0.38327      0.18002      0.15099      0.15331     0.072009     0.060395</span>
+<span class="go">      0.38327      0.18002      0.15099      0.15331     0.072009     0.060395</span>
+</pre></div>
+</div>
+<p>For Mathematica:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span> <span class="o">=</span> <span class="p">{{</span><span class="o">-</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},{</span><span class="mf">6.</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},{</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">},{</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">},{</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="o">-</span><span class="mf">13.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">},{</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.</span><span class="p">}};</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="p">{{</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},{</span><span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},{</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},{</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},{</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},{</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.</span><span class="p">}};</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Range</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">30.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">mass0</span><span class="p">,</span> <span class="n">ini</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">clo</span><span class="p">}</span> <span class="o">=</span> <span class="n">GeneralFluidSolve</span><span class="p">[</span><span class="n">Q</span><span class="p">,</span> <span class="n">R</span><span class="p">];</span>
+<span class="go">&quot;Final Residual Error for Psi: &quot;8.049116928532385*^-16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">mass0</span><span class="p">];</span>
+<span class="go">{0., 0.08224612885906893, 0.06949240017690633, 0., 0.023812479297703082, 0.02072428187885746}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">ini</span><span class="p">];</span>
+<span class="go">{0.7019539736851326, 0.20504772142279093}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">K</span><span class="p">];</span>
+<span class="go">{{-2.4697521505145907, 1.134862595858089},</span>
+<span class="go"> {1.2950177373696095, -1.1686305573375777}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">clo</span><span class="p">];</span>
+<span class="go">{{0.5, 0.061087420281185266, 0.05457444259943262, 0., 0.016179786329552276, 0.012594625960258435},</span>
+<span class="go"> {0., 0.05538937584186795, 0.04311604966168951, 0.16666666666666666, 0.03891262165047115, 0.03263123758653177}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">FluidStationaryDistr</span><span class="p">[</span><span class="n">mass0</span><span class="p">,</span> <span class="n">ini</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">clo</span><span class="p">,</span> <span class="n">x</span><span class="p">];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">y</span><span class="p">];</span>
+<span class="go">{{0., 0.08224612885906893, 0.06949240017690633, 0., 0.023812479297703082, 0.02072428187885746},</span>
+<span class="go"> {0.17679828584143387, 0.11964030859218046, 0.10108396370608363, 0.04752378685346968, 0.0406292470977543, 0.03448225831899647},</span>
+<span class="go"> {0.25236302876555233, 0.1413624893371936, 0.11905425826308001, 0.08510641630266393, 0.051849121729191976, 0.043743883928920646},</span>
+<span class="go"> {0.29931264954324033, 0.1552119530930992, 0.13049436916913887, 0.10951964597475519, 0.05906828801104183, 0.04970631314037002},</span>
+<span class="go"> {0.32938468757051215, 0.16409771658698452, 0.13783358942358814, 0.12520170582619924, 0.06370278668078841, 0.053534155407154435},</span>
+<span class="go"> {0.34868449515660904, 0.1698010870955941, 0.1425442744705256, 0.13526807548357628, 0.06667757320990522, 0.055991171722000466},</span>
+<span class="go"> {0.3610724041904199, 0.17346191738358857, 0.1455679271785355, 0.1417294213170503, 0.06858700808700413, 0.057568264149546605},</span>
+<span class="go"> {0.3690238580066053, 0.1758117034241949, 0.14750872644722962, 0.145876782363056, 0.06981262188190124, 0.058580556464752895},</span>
+<span class="go"> {0.37412767739882563, 0.17731996646316545, 0.14875447212268095, 0.1485388594161015, 0.0705993096793801, 0.05923031906992984},</span>
+<span class="go"> {0.3774036787247303, 0.17828807903623806, 0.1495540820182828, 0.1502475734813503, 0.07110426294589622, 0.05964738382040349},</span>
+<span class="go"> {0.37950645389859416, 0.17890948387765165, 0.15006732962417735, 0.15134435005708705, 0.0714283785634811, 0.0599150862161234},</span>
+<span class="go"> {0.3808561674647779, 0.17930834655920647, 0.15039676915014394, 0.15204834078408558, 0.0716364194665258, 0.06008691702319098},</span>
+<span class="go"> {0.3817225114911861, 0.17956436554736804, 0.15060822732359253, 0.15250021307481673, 0.07176995520189747, 0.06019721049358771},</span>
+<span class="go"> {0.38227859390074176, 0.17972869709637077, 0.15074395651087513, 0.15279025747355637, 0.0718556681187339, 0.06026800483960608},</span>
+<span class="go"> {0.38263552790939337, 0.17983417699921528, 0.15083107734418205, 0.15297642899804645, 0.0719106848832888, 0.0603134457837539},</span>
+<span class="go"> {0.38286463403528914, 0.1799018816485757, 0.1508869978116073, 0.15309592738064431, 0.07194599863171562, 0.06034261307635817},</span>
+<span class="go"> {0.3830116909579996, 0.1799453394013931, 0.15092289162205835, 0.1531726301067063, 0.07196866555584394, 0.060361334759496954},</span>
+<span class="go"> {0.38310608275321023, 0.17997323373801222, 0.15094593087205072, 0.15322186347754735, 0.07198321483119217, 0.06037335169313235},</span>
+<span class="go"> {0.38316667025115914, 0.17999113834570535, 0.15096071913313355, 0.1532534650245694, 0.07199255361099133, 0.06038106503241529},</span>
+<span class="go"> {0.38320555970017856, 0.18000263082107842, 0.1509702113113046, 0.1532737491886867, 0.07199854791696529, 0.06038601601281503},</span>
+<span class="go"> {0.3832305217681999, 0.18001000752502333, 0.15097630407947565, 0.15328676903590022, 0.07200239549715055, 0.06038919391100146},</span>
+<span class="go"> {0.38324654423330573, 0.18001474242845572, 0.1509802148598379, 0.15329512611783286, 0.0720048651530784, 0.060391233716467846},</span>
+<span class="go"> {0.38325682861310345, 0.18001778163277804, 0.1509827250822216, 0.1533004902989391, 0.07200645035731282, 0.060392543011510216},</span>
+<span class="go"> {0.38326342987371637, 0.1800197324144666, 0.15098433632494862, 0.15330393341929766, 0.07200746785632414, 0.060393383411997556},</span>
+<span class="go"> {0.3832676670413954, 0.18002098456759374, 0.15098537053735236, 0.15330614346358376, 0.07200812096096232, 0.06039392284196271},</span>
+<span class="go"> {0.3832703867628235, 0.1800217882902569, 0.15098603436985764, 0.15330756203024365, 0.07200854017087183, 0.06039426908722517},</span>
+<span class="go"> {0.3832721324772268, 0.18002230417773518, 0.15098646046569003, 0.15330847256917773, 0.07200880925018614, 0.06039449133253881},</span>
+<span class="go"> {0.38327325300330195, 0.18002263531172266, 0.1509867339648889, 0.15330905701908332, 0.07200898196479938, 0.06039463398569475},</span>
+<span class="go"> {0.3832739722381797, 0.18002284785752437, 0.15098690951650454, 0.15330943216140772, 0.07200909282556067, 0.06039472555083318},</span>
+<span class="go"> {0.3832744338952716, 0.18002298428483032, 0.15098702219825963, 0.1533096729549508, 0.0720091639840351, 0.06039478432397785},</span>
+<span class="go"> {0.38327473022026526, 0.18002307185376684, 0.15098709452557996, 0.15330982751370525, 0.07200920965870329, 0.06039482204884339}}</span>
+</pre></div>
+</div>
+<p>For Python/Numpy:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="o">-</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],[</span><span class="mf">6.</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="o">-</span><span class="mf">13.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">31.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mass0</span><span class="p">,</span> <span class="n">ini</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">clo</span> <span class="o">=</span> <span class="n">GeneralFluidSolve</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<span class="go">Final Residual Error for G:  6.661338147750939e-16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">mass0</span><span class="p">)</span>
+<span class="go">[[ 0.       0.08225  0.06949  0.       0.02381  0.02072]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">ini</span><span class="p">)</span>
+<span class="go">[[ 0.70195  0.20505]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+<span class="go">[[-2.46975  1.13486]</span>
+<span class="go"> [ 1.29502 -1.16863]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">clo</span><span class="p">)</span>
+<span class="go">[[ 0.5      0.06109  0.05457  0.       0.01618  0.01259]</span>
+<span class="go"> [ 0.       0.05539  0.04312  0.16667  0.03891  0.03263]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">FluidStationaryDistr</span><span class="p">(</span><span class="n">mass0</span><span class="p">,</span> <span class="n">ini</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">clo</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">[[ 0.       0.08225  0.06949  0.       0.02381  0.02072]</span>
+<span class="go"> [ 0.1768   0.11964  0.10108  0.04752  0.04063  0.03448]</span>
+<span class="go"> [ 0.25236  0.14136  0.11905  0.08511  0.05185  0.04374]</span>
+<span class="go"> [ 0.29931  0.15521  0.13049  0.10952  0.05907  0.04971]</span>
+<span class="go"> [ 0.32938  0.1641   0.13783  0.1252   0.0637   0.05353]</span>
+<span class="go"> [ 0.34868  0.1698   0.14254  0.13527  0.06668  0.05599]</span>
+<span class="go"> [ 0.36107  0.17346  0.14557  0.14173  0.06859  0.05757]</span>
+<span class="go"> [ 0.36902  0.17581  0.14751  0.14588  0.06981  0.05858]</span>
+<span class="go"> [ 0.37413  0.17732  0.14875  0.14854  0.0706   0.05923]</span>
+<span class="go"> [ 0.3774   0.17829  0.14955  0.15025  0.0711   0.05965]</span>
+<span class="go"> [ 0.37951  0.17891  0.15007  0.15134  0.07143  0.05992]</span>
+<span class="go"> [ 0.38086  0.17931  0.1504   0.15205  0.07164  0.06009]</span>
+<span class="go"> [ 0.38172  0.17956  0.15061  0.1525   0.07177  0.0602 ]</span>
+<span class="go"> [ 0.38228  0.17973  0.15074  0.15279  0.07186  0.06027]</span>
+<span class="go"> [ 0.38264  0.17983  0.15083  0.15298  0.07191  0.06031]</span>
+<span class="go"> [ 0.38286  0.1799   0.15089  0.1531   0.07195  0.06034]</span>
+<span class="go"> [ 0.38301  0.17995  0.15092  0.15317  0.07197  0.06036]</span>
+<span class="go"> [ 0.38311  0.17997  0.15095  0.15322  0.07198  0.06037]</span>
+<span class="go"> [ 0.38317  0.17999  0.15096  0.15325  0.07199  0.06038]</span>
+<span class="go"> [ 0.38321  0.18     0.15097  0.15327  0.072    0.06039]</span>
+<span class="go"> [ 0.38323  0.18001  0.15098  0.15329  0.072    0.06039]</span>
+<span class="go"> [ 0.38325  0.18001  0.15098  0.1533   0.072    0.06039]</span>
+<span class="go"> [ 0.38326  0.18002  0.15098  0.1533   0.07201  0.06039]</span>
+<span class="go"> [ 0.38326  0.18002  0.15098  0.1533   0.07201  0.06039]</span>
+<span class="go"> [ 0.38327  0.18002  0.15099  0.15331  0.07201  0.06039]</span>
+<span class="go"> [ 0.38327  0.18002  0.15099  0.15331  0.07201  0.06039]</span>
+<span class="go"> [ 0.38327  0.18002  0.15099  0.15331  0.07201  0.06039]</span>
+<span class="go"> [ 0.38327  0.18002  0.15099  0.15331  0.07201  0.06039]</span>
+<span class="go"> [ 0.38327  0.18002  0.15099  0.15331  0.07201  0.06039]</span>
+<span class="go"> [ 0.38327  0.18002  0.15099  0.15331  0.07201  0.06039]</span>
+<span class="go"> [ 0.38327  0.18002  0.15099  0.15331  0.07201  0.06039]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="queues.html" class="btn btn-neutral float-right" title="Tools for the Analysis of Queues (butools.queues)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GeneralFluidSolve.html" class="btn btn-neutral" title="butools.mam.GeneralFluidSolve" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2015, The BuTools Team.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/copybutton.js"></script>
+      <script type="text/javascript" src="_static/jquery.func_toggle.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

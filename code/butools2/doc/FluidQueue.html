@@ -1,0 +1,887 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>butools.queues.FluidQueue &mdash; butools 2.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="butools 2.0 documentation" href="index.html"/>
+        <link rel="up" title="Tools for the Analysis of Queues (butools.queues)" href="queues.html"/>
+        <link rel="next" title="butools.queues.FluFluQueue" href="FluFluQueue.html"/>
+        <link rel="prev" title="butools.queues.FluidQueue" href=""/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> butools
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities (<code class="docutils literal"><span class="pre">butools.utils</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#solution-of-markov-chains-and-rational-processes">Solution of Markov chains and rational processes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mc.html">Markov Chains (<code class="docutils literal"><span class="pre">butools.mc</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mc.html#markov-chains-and-rational-processes">Markov chains and rational processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc.html#properties-of-markov-chains-and-rational-processes">Properties of Markov chains and rational processes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CTMCSolve.html">butools.mc.CTMCSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DTMCSolve.html">butools.mc.DTMCSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CRPSolve.html">butools.mc.CRPSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DRPSolve.html">butools.mc.DRPSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckGenerator.html">butools.mc.CheckGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckProbMatrix.html">butools.mc.CheckProbMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckProbVector.html">butools.mc.CheckProbVector</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="moments.html">Moment expressions (<code class="docutils literal"><span class="pre">butools.moments</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="moments.html#moment-expressions">Moment expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moments.html#conversion-routines-between-various-moment-expressions">Conversion routines between various moment expressions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="NormMomsFromMoms.html">butools.moments.NormMomsFromMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomsFromNormMoms.html">butools.moments.MomsFromNormMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ReducedMomsFromMoms.html">butools.moments.ReducedMomsFromMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomsFromReducedMoms.html">butools.moments.MomsFromReducedMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HankelMomsFromMoms.html">butools.moments.HankelMomsFromMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomsFromHankelMoms.html">butools.moments.MomsFromHankelMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FactorialMomsFromMoms.html">butools.moments.FactorialMomsFromMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomsFromFactorialMoms.html">butools.moments.MomsFromFactorialMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JFactorialMomsFromJMoms.html">butools.moments.JFactorialMomsFromJMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JMomsFromJFactorialMoms.html">butools.moments.JMomsFromJFactorialMoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMoments.html">butools.moments.CheckMoments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reptrans.html">Representation Transformation Tools (<code class="docutils literal"><span class="pre">butools.reptrans</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reptrans.html#tools-for-representation-transformation">Tools for representation transformation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SimilarityMatrix.html">butools.reptrans.SimilarityMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SimilarityMatrixForVectors.html">butools.reptrans.SimilarityMatrixForVectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransformToMonocyclic.html">butools.reptrans.TransformToMonocyclic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransformToAcyclic.html">butools.reptrans.TransformToAcyclic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExtendToMarkovian.html">butools.reptrans.ExtendToMarkovian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FindMarkovianRepresentation.html">butools.reptrans.FindMarkovianRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MStaircase.html">butools.reptrans.MStaircase</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ph.html">Tools for Phase-Type Distributions (<code class="docutils literal"><span class="pre">butools.ph</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#phase-type-and-matrix-exponential-distributions">Phase-type and matrix-exponential distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#simple-statistical-properties-and-tools">Simple statistical properties and tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#inverse-characterization-tools">Inverse characterization tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#representation-transformation-methods">Representation transformation methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#minimal-representations">Minimal representations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MomentsFromME.html">butools.ph.MomentsFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomentsFromPH.html">butools.ph.MomentsFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromME.html">butools.ph.CdfFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromPH.html">butools.ph.CdfFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PdfFromME.html">butools.ph.PdfFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PdfFromPH.html">butools.ph.PdfFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IntervalPdfFromPH.html">butools.ph.IntervalPdfFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomPH.html">butools.ph.RandomPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckPHRepresentation.html">butools.ph.CheckPHRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMERepresentation.html">butools.ph.CheckMERepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMEPositiveDensity.html">butools.ph.CheckMEPositiveDensity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromPH.html">butools.ph.SamplesFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromPH.html">butools.ph.ImageFromPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="APHFrom2Moments.html">butools.ph.APHFrom2Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="APHFrom3Moments.html">butools.ph.APHFrom3Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PH2From3Moments.html">butools.ph.PH2From3Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PH3From5Moments.html">butools.ph.PH3From5Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MEFromMoments.html">butools.ph.MEFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="APH2ndMomentLowerBound.html">butools.ph.APH2ndMomentLowerBound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="APH3rdMomentLowerBound.html">butools.ph.APH3rdMomentLowerBound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="APH3rdMomentUpperBound.html">butools.ph.APH3rdMomentUpperBound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AcyclicPHFromME.html">butools.ph.AcyclicPHFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromPH2.html">butools.ph.CanonicalFromPH2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromPH3.html">butools.ph.CanonicalFromPH3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MonocyclicPHFromME.html">butools.ph.MonocyclicPHFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PHFromME.html">butools.ph.PHFromME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MEOrder.html">butools.ph.MEOrder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MEOrderFromMoments.html">butools.ph.MEOrderFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MinimalRepFromME.html">butools.ph.MinimalRepFromME</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ph.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dph.html">Tools for Discrete Phase-Type Distributions (<code class="docutils literal"><span class="pre">butools.dph</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dph.html#discrete-phase-type-and-matrix-geometric-distributions">Discrete phase-type and matrix-geometric distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dph.html#simple-statistical-properties-and-tools">Simple statistical properties and tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dph.html#inverse-characterization-tools">Inverse characterization tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dph.html#representation-transformation-methods">Representation transformation methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MomentsFromMG.html">butools.dph.MomentsFromMG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MomentsFromDPH.html">butools.dph.MomentsFromDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromMG.html">butools.dph.CdfFromMG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromDPH.html">butools.dph.CdfFromDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PmfFromMG.html">butools.dph.PmfFromMG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PmfFromDPH.html">butools.dph.PmfFromDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomDPH.html">butools.dph.RandomDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckDPHRepresentation.html">butools.dph.CheckDPHRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMGRepresentation.html">butools.dph.CheckMGRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromDPH.html">butools.dph.SamplesFromDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromDPH.html">butools.dph.ImageFromDPH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DPH2From3Moments.html">butools.dph.DPH2From3Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DPH3From5Moments.html">butools.dph.DPH3From5Moments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MGFromMoments.html">butools.dph.MGFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AcyclicDPHFromMG.html">butools.dph.AcyclicDPHFromMG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromDPH2.html">butools.dph.CanonicalFromDPH2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromDPH3.html">butools.dph.CanonicalFromDPH3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DPHFromMG.html">butools.dph.DPHFromMG</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="map.html">Tools for Markovian Arrival Processes (<code class="docutils literal"><span class="pre">butools.map</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="map.html#markovian-arrival-processes-and-rational-arrival-processes">Markovian arrival processes and rational arrival processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html#simple-statistical-properties-and-tools">Simple statistical properties and tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html#inverse-characterization-tools">Inverse characterization tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html#representation-transformation-methods">Representation transformation methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromMAP.html">butools.map.MarginalDistributionFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromRAP.html">butools.map.MarginalDistributionFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromMMAP.html">butools.map.MarginalDistributionFromMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromMRAP.html">butools.map.MarginalDistributionFromMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromMAP.html">butools.map.MarginalMomentsFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromRAP.html">butools.map.MarginalMomentsFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromMMAP.html">butools.map.MarginalMomentsFromMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromMRAP.html">butools.map.MarginalMomentsFromMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagCorrelationsFromMAP.html">butools.map.LagCorrelationsFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagCorrelationsFromRAP.html">butools.map.LagCorrelationsFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromMAP.html">butools.map.LagkJointMomentsFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromRAP.html">butools.map.LagkJointMomentsFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromMMAP.html">butools.map.LagkJointMomentsFromMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromMRAP.html">butools.map.LagkJointMomentsFromMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomMAP.html">butools.map.RandomMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomMMAP.html">butools.map.RandomMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMAPRepresentation.html">butools.map.CheckMAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckRAPRepresentation.html">butools.map.CheckRAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMMAPRepresentation.html">butools.map.CheckMMAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckMRAPRepresentation.html">butools.map.CheckMRAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromMAP.html">butools.map.SamplesFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromMMAP.html">butools.map.SamplesFromMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromMAP.html">butools.map.ImageFromMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromMMAP.html">butools.map.ImageFromMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RAPFromMoments.html">butools.map.RAPFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MRAPFromMoments.html">butools.map.MRAPFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RAPFromMomentsAndCorrelations.html">butools.map.RAPFromMomentsAndCorrelations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAP2FromMoments.html">butools.map.MAP2FromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAP2CorrelationBounds.html">butools.map.MAP2CorrelationBounds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPFromFewMomentsAndCorrelations.html">butools.map.MAPFromFewMomentsAndCorrelations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromMAP2.html">butools.map.CanonicalFromMAP2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPFromRAP.html">butools.map.MAPFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MMAPFromMRAP.html">butools.map.MMAPFromMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MinimalRepFromRAP.html">butools.map.MinimalRepFromRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MinimalRepFromMRAP.html">butools.map.MinimalRepFromMRAP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dmap.html">Tools for Discrete Markovian Arrival Processes (<code class="docutils literal"><span class="pre">butools.dmap</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dmap.html#discrete-markovian-arrival-processes-and-rational-arrival-processes">Discrete Markovian arrival processes and rational arrival processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmap.html#simple-statistical-properties-and-tools">Simple statistical properties and tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmap.html#inverse-characterization-tools">Inverse characterization tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmap.html#representation-transformation-methods">Representation transformation methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromDMAP.html">butools.dmap.MarginalDistributionFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromDRAP.html">butools.dmap.MarginalDistributionFromDRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromDMMAP.html">butools.dmap.MarginalDistributionFromDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalDistributionFromDMRAP.html">butools.dmap.MarginalDistributionFromDMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromDMAP.html">butools.dmap.MarginalMomentsFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromDRAP.html">butools.dmap.MarginalMomentsFromDRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromDMMAP.html">butools.dmap.MarginalMomentsFromDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromDMRAP.html">butools.dmap.MarginalMomentsFromDMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagCorrelationsFromDMAP.html">butools.dmap.LagCorrelationsFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagCorrelationsFromDRAP.html">butools.dmap.LagCorrelationsFromDRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromDMAP.html">butools.dmap.LagkJointMomentsFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromDRAP.html">butools.dmap.LagkJointMomentsFromDRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromDMMAP.html">butools.dmap.LagkJointMomentsFromDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromDMRAP.html">butools.dmap.LagkJointMomentsFromDMRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomDMAP.html">butools.dmap.RandomDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomDMMAP.html">butools.dmap.RandomDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckDMAPRepresentation.html">butools.dmap.CheckDMAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckDRAPRepresentation.html">butools.dmap.CheckDRAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckDMMAPRepresentation.html">butools.dmap.CheckDMMAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CheckDMRAPRepresentation.html">butools.dmap.CheckDMRAPRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromDMAP.html">butools.dmap.SamplesFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SamplesFromDMMAP.html">butools.dmap.SamplesFromDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromDMAP.html">butools.dmap.ImageFromDMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageFromDMMAP.html">butools.dmap.ImageFromDMMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DRAPFromMoments.html">butools.dmap.DRAPFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DMRAPFromMoments.html">butools.dmap.DMRAPFromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DMAP2FromMoments.html">butools.dmap.DMAP2FromMoments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanonicalFromDMAP2.html">butools.dmap.CanonicalFromDMAP2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DMAPFromDRAP.html">butools.dmap.DMAPFromDRAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DMMAPFromDMRAP.html">butools.dmap.DMMAPFromDMRAP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="trace.html">Tools for the Analysis of Measurement Traces (<code class="docutils literal"><span class="pre">butools.trace</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="trace.html#analysis-of-measurement-traces">Analysis of measurement traces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trace.html#tools-for-the-analysis-of-measurement-traces">Tools for the analysis of measurement traces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromTrace.html">butools.trace.CdfFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CdfFromWeightedTrace.html">butools.trace.CdfFromWeightedTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PdfFromTrace.html">butools.trace.PdfFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PdfFromWeightedTrace.html">butools.trace.PdfFromWeightedTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromTrace.html">butools.trace.MarginalMomentsFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarginalMomentsFromWeightedTrace.html">butools.trace.MarginalMomentsFromWeightedTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagCorrelationsFromTrace.html">butools.trace.LagCorrelationsFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LagkJointMomentsFromTrace.html">butools.trace.LagCorrelationsFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IATimesFromCummulative.html">butools.trace.IATimesFromCummulative</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fitting.html">Tools for fitting measurement traces (<code class="docutils literal"><span class="pre">butools.fitting</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fitting.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitting.html#functions-for-fitting">Functions for fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitting.html#functions-for-evaluating-the-results-of-fitting">Functions for evaluating the results of fitting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PHFromTrace.html">butools.fitting.PHFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPFromTrace.html">butools.fitting.MAPFromTrace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SquaredDifference.html">butools.fitting.SquaredDifference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RelativeEntropy.html">butools.fitting.RelativeEntropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmpiricalSquaredDifference.html">butools.fitting.EmpiricalSquaredDifference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmpiricalRelativeEntropy.html">butools.fitting.EmpiricalRelativeEntropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LikelihoodFromTrace.html">butools.fitting.LikelihoodFromTrace</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mam.html">Matrix-Analytic Methods (<code class="docutils literal"><span class="pre">butools.mam</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#quasi-birth-death-processes">Quasi Birth-Death Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#m-g-1-and-g-m-1-type-markov-chains">M/G/1 and G/M/1 Type Markov Chains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#markovian-fluid-models">Markovian Fluid Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#functions-to-solve-qbds">Functions to solve QBDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#functions-to-solve-m-g-1-and-g-m-1-type-markov-chains">Functions to solve M/G/1 and G/M/1 type Markov chains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#functions-to-solve-markovian-fluid-models">Functions to solve Markovian fluid models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mam.html#refereces">Refereces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="QBDFundamentalMatrices.html">butools.mam.QBDFundamentalMatrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QBDSolve.html">butools.mam.QBDSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QBDStationaryDistr.html">butools.mam.QBDStationaryDistr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MG1FundamentalMatrix.html">butools.mam.MG1FundamentalMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MG1StationaryDistr.html">butools.mam.MG1StationaryDistr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GM1FundamentalMatrix.html">butools.mam.GM1FundamentalMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GM1StationaryDistr.html">butools.mam.GM1StationaryDistr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FluidFundamentalMatrices.html">butools.mam.FluidFundamentalMatrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FluidSolve.html">butools.mam.FluidSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GeneralFluidSolve.html">butools.mam.GeneralFluidSolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FluidStationaryDistr.html">butools.mam.FluidStationaryDistr</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="queues.html">Tools for the Analysis of Queues (<code class="docutils literal"><span class="pre">butools.queues</span></code>)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="queues.html#type-of-queues-supported-by-butools">Type of queues supported by BuTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html#performance-measures">Performance measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html#functions-for-discrete-queues">Functions for discrete queues</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="queues.html#functions-for-continuous-queues">Functions for continuous queues</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="QBDQueue.html">butools.queues.QBDQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPMAP1.html">butools.queues.MAPMAP1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MMAPPH1FCFS.html">butools.queues.MMAPPH1FCFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MMAPPH1PRPR.html">butools.queues.MMAPPH1PRPR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MMAPPH1NPPR.html">butools.queues.MMAPPH1NPPR</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">butools.queues.FluidQueue</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">butools.queues.FluidQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FluFluQueue.html">butools.queues.FluFluQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FluFluQueue.html">butools.queues.FluFluQueue</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">butools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="queues.html">Tools for the Analysis of Queues (<code class="docutils literal"><span class="pre">butools.queues</span></code>)</a> &raquo;</li>
+      
+    <li>butools.queues.FluidQueue</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/FluidQueue.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="butools-queues-fluidqueue">
+<h1>butools.queues.FluidQueue<a class="headerlink" href="#butools-queues-fluidqueue" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="butools.queues.FluidQueue">
+<code class="descclassname">butools.queues.</code><code class="descname">FluidQueue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#butools.queues.FluidQueue" title="Permalink to this definition">¶</a></dt>
+<dd><table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Matlab:</td>
+<td><code class="code docutils literal"><span class="pre">Ret</span> <span class="pre">=</span> <span class="pre">FluidQueue(Q,</span> <span class="pre">Rin,</span> <span class="pre">Rout,</span> <span class="pre">...)</span></code></td>
+</tr>
+<tr class="row-even"><td>Mathematica:</td>
+<td><code class="code docutils literal"><span class="pre">Ret</span> <span class="pre">=</span> <span class="pre">FluidQueue[Q,</span> <span class="pre">Rin,</span> <span class="pre">Rout,</span> <span class="pre">...]</span></code></td>
+</tr>
+<tr class="row-odd"><td>Python/Numpy:</td>
+<td><code class="code docutils literal"><span class="pre">Ret</span> <span class="pre">=</span> <span class="pre">FluidQueue(Q,</span> <span class="pre">Rin,</span> <span class="pre">Rout,</span> <span class="pre">...)</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Returns various performane measures of a fluid queue.</p>
+<p>In a fluid queue there is a background continuous time
+Markov chain (given by generator Q), and diagonal
+matrix Rin (Rout) whose ith entry provides the
+fluid rate at which fluid enters the queue (can be
+served) while the background process is in state i.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>Q</strong> : matrix, shape (N,N)</p>
+<blockquote>
+<div><p>The generator of the background Markov chain</p>
+</div></blockquote>
+<p><strong>Rin</strong> : matrix, shape (N,N)</p>
+<blockquote>
+<div><p>Diagonal matrix containing the fluid input rates
+associated to the states of the background process</p>
+</div></blockquote>
+<p><strong>Rout</strong> : matrix, shape (N,N)</p>
+<blockquote>
+<div><p>Diagonal matrix containing the fluid output rates
+associated to the states of the background process</p>
+</div></blockquote>
+<p><strong>further parameters :</strong></p>
+<blockquote>
+<div><p>The rest of the function parameters specify the options
+and the performance measures to be computed.</p>
+<p>The supported performance measures and options in this
+function are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="27%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter name</th>
+<th class="head">Input parameters</th>
+<th class="head">Output</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#8220;flMoms&#8221;</td>
+<td>Number of moments</td>
+<td>The moments of the fluid level</td>
+</tr>
+<tr class="row-odd"><td>&#8220;flDistr&#8221;</td>
+<td>A vector of points</td>
+<td>The fluid level distribution at
+the requested points (cdf)</td>
+</tr>
+<tr class="row-even"><td>&#8220;flDistrME&#8221;</td>
+<td>None</td>
+<td>The vector-matrix parameters of the
+matrix-exponentially distributed
+fluid level distribution</td>
+</tr>
+<tr class="row-odd"><td>&#8220;flDistrPH&#8221;</td>
+<td>None</td>
+<td>The vector-matrix parameters of the
+matrix-exponentially distributed
+fluid level distribution, converted
+to a PH representation</td>
+</tr>
+<tr class="row-even"><td>&#8220;stMoms&#8221;</td>
+<td>Number of moments</td>
+<td>The sojourn time moments of fluid
+drops</td>
+</tr>
+<tr class="row-odd"><td>&#8220;stDistr&#8221;</td>
+<td>A vector of points</td>
+<td>The sojourn time distribution at the
+requested points (cummulative, cdf)</td>
+</tr>
+<tr class="row-even"><td>&#8220;stDistrME&#8221;</td>
+<td>None</td>
+<td>The vector-matrix parameters of the
+matrix-exponentially distributed
+sojourn time distribution</td>
+</tr>
+<tr class="row-odd"><td>&#8220;stDistrPH&#8221;</td>
+<td>None</td>
+<td>The vector-matrix parameters of the
+matrix-exponentially distributed
+sojourn time distribution, converted
+to a PH representation</td>
+</tr>
+<tr class="row-even"><td>&#8220;prec&#8221;</td>
+<td>The precision</td>
+<td>Numerical precision to check if the
+input is valid and it is also used
+as a stopping condition when solving
+the Riccati equation</td>
+</tr>
+<tr class="row-odd"><td>&#8220;Q0&#8221;</td>
+<td>Matrix, shape(N,N)</td>
+<td>The generator of the background
+Markov chain when the fluid level is
+zero. If not given, Q0=Q is assumed</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>Ret</strong> : list of the performance measures</p>
+<blockquote class="last">
+<div><p>Each entry of the list corresponds to a performance
+measure requested. If there is just a single item,
+then it is not put into a list.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>&#8220;flDistrME&#8221; and &#8220;stDistrME&#8221; behave much better numerically than
+&#8220;flDistrPH&#8221; and &#8220;stDistrPH&#8221;.</p>
+<p class="rubric">Examples</p>
+<p>For Matlab:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">;</span> <span class="mf">6.</span><span class="p">,</span> <span class="o">-</span><span class="mf">25.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">;</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">;</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">;</span> <span class="mf">7.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="mf">13.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">;</span> <span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="o">-</span><span class="mf">26.</span><span class="p">];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vRin</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">3.</span><span class="p">];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vRout</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">3.</span><span class="p">,</span><span class="mf">2.</span><span class="p">];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Rin</span> <span class="o">=</span> <span class="n">diag</span><span class="p">(</span><span class="n">vRin</span><span class="p">);</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Rout</span> <span class="o">=</span> <span class="n">diag</span><span class="p">(</span><span class="n">vRout</span><span class="p">);</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">fld</span><span class="p">,</span> <span class="n">flm</span><span class="p">]</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&#39;flDistr&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mf">1.</span><span class="p">),</span> <span class="s">&#39;flMoms&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="go">Final Residual Error for Psi:    5.3291e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">fld</span><span class="p">);</span>
+<span class="go">  Columns 1 through 8</span>
+<span class="go">      0.23662      0.39265      0.49537      0.57807       0.6469      0.70447      0.75265      0.79297</span>
+<span class="go">  Columns 9 through 11</span>
+<span class="go">      0.82672      0.85497      0.87861</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">flm</span><span class="p">);</span>
+<span class="go">      0.40636       0.4546      0.76609        1.722       4.8384</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">alphap</span><span class="p">,</span> <span class="n">Ap</span><span class="p">]</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&#39;flDistrPH&#39;</span><span class="p">);</span>
+<span class="go">Final Residual Error for Psi:    5.3291e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">alphap</span><span class="p">);</span>
+<span class="go">      0.63124      0.13213</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">Ap</span><span class="p">);</span>
+<span class="go">      -2.0387      0.41483</span>
+<span class="go">         12.1      -21.143</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">alpha</span><span class="p">,</span> <span class="n">A</span><span class="p">]</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&#39;flDistrME&#39;</span><span class="p">);</span>
+<span class="go">Final Residual Error for Psi:    5.3291e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">alpha</span><span class="p">);</span>
+<span class="go">     0.099033      0.66434</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="go">      -3.8739       2.2653</span>
+<span class="go">       16.206      -19.308</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fldFromPH</span> <span class="o">=</span> <span class="n">CdfFromPH</span><span class="p">(</span><span class="n">alphap</span><span class="p">,</span> <span class="n">Ap</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mf">1.</span><span class="p">));</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">fldFromPH</span><span class="p">);</span>
+<span class="go">  Columns 1 through 8</span>
+<span class="go">      0.23662      0.39265      0.49537      0.57807       0.6469      0.70447      0.75265      0.79297</span>
+<span class="go">  Columns 9 through 11</span>
+<span class="go">      0.82672      0.85497      0.87861</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flmFromME</span> <span class="o">=</span> <span class="n">MomentsFromME</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">flmFromME</span><span class="p">);</span>
+<span class="go">      0.40636       0.4546      0.76609        1.722       4.8384</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">std</span><span class="p">,</span> <span class="n">stm</span><span class="p">]</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&#39;stDistr&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mf">1.</span><span class="p">),</span> <span class="s">&#39;stMoms&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="go">Final Residual Error for Psi:    5.3291e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">std</span><span class="p">);</span>
+<span class="go">  Columns 1 through 8</span>
+<span class="go">      0.31678      0.57513      0.67546      0.74313       0.7949      0.83595       0.8688      0.89511</span>
+<span class="go">  Columns 9 through 11</span>
+<span class="go">      0.91618      0.93304      0.94652</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">stm</span><span class="p">);</span>
+<span class="go">      0.23252      0.20069      0.26684      0.47402       1.0523</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">betap</span><span class="p">,</span> <span class="n">Bp</span><span class="p">]</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&#39;stDistrPH&#39;</span><span class="p">);</span>
+<span class="go">Final Residual Error for Psi:    5.3291e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">betap</span><span class="p">);</span>
+<span class="go">  Columns 1 through 8</span>
+<span class="go">      0.24893     0.030403     0.068594     0.023408      0.21436            0            0            0</span>
+<span class="go">  Columns 9 through 12</span>
+<span class="go">            0            0            0     0.097532</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">Bp</span><span class="p">);</span>
+<span class="go">  Columns 1 through 8</span>
+<span class="go">      -21.232        2.489            2            0            4            0            0            0</span>
+<span class="go">         72.6      -135.86            0            2            0            4            0            0</span>
+<span class="go">            6            0      -29.077      0.82967            5            0            3            0</span>
+<span class="go">            0            6         24.2      -67.286            0            5            0            3</span>
+<span class="go">            1            0            3            0           -4            0            0            0</span>
+<span class="go">            0            1            0            3            0           -4            0            0</span>
+<span class="go">            0            0            0            0            0            0           -8            0</span>
+<span class="go">            0            0            0            0            0            0            0           -8</span>
+<span class="go">            7            0            3            0            0            0            2            0</span>
+<span class="go">            0            7            0            3            0            0            0            2</span>
+<span class="go">            7            0            8            0            0            0            3            0</span>
+<span class="go">            0            7            0            8            0            0            0            3</span>
+<span class="go">  Columns 9 through 12</span>
+<span class="go">            1            0            2            0</span>
+<span class="go">            0            1            0            2</span>
+<span class="go">            7            0            4            0</span>
+<span class="go">            0            7            0            4</span>
+<span class="go">            0            0            0            0</span>
+<span class="go">            0            0            0            0</span>
+<span class="go">            3            0            5            0</span>
+<span class="go">            0            3            0            5</span>
+<span class="go">      -19.116       1.2445            1            0</span>
+<span class="go">         36.3      -76.429            0            1</span>
+<span class="go">            8            0      -30.077      0.82967</span>
+<span class="go">            0            8         24.2      -68.286</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">beta</span><span class="p">,</span> <span class="n">B</span><span class="p">]</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&#39;stDistrME&#39;</span><span class="p">);</span>
+<span class="go">Final Residual Error for Psi:    5.3291e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">beta</span><span class="p">);</span>
+<span class="go">  Columns 1 through 8</span>
+<span class="go">   6.1487e-17            0     0.078831    -0.087519     0.095339   1.1102e-16            0     -0.10977</span>
+<span class="go">  Columns 9 through 12</span>
+<span class="go">      0.10977     -0.10977      0.10977      0.59657</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">B</span><span class="p">);</span>
+<span class="go">  Columns 1 through 8</span>
+<span class="go">      -22.232      -9.0243       12.676      -16.419      -10.249       30.265            0            0</span>
+<span class="go">      -7.8856          -14       12.876       -9.097      -5.6783       16.769            0            0</span>
+<span class="go">      -7.2098       15.443      -18.077      -16.653       4.8244       14.325      -4.9559       5.1109</span>
+<span class="go">      -6.4942        13.91       45.225      -88.757       8.1259       15.247      -9.3289       9.6206</span>
+<span class="go">      -5.1787       9.9439       41.788      -50.497      -22.618       13.996      -8.5637       3.0746</span>
+<span class="go">       1.1565       9.2439       33.466      -40.969       105.27      -123.85       -13.15       9.2801</span>
+<span class="go">       1.1143       8.9065       32.244      -39.473       97.844      -111.62       -21.67       14.098</span>
+<span class="go">       1.0805       5.2804        29.45      -31.898        93.14      -109.17       47.142      -53.616</span>
+<span class="go">       1.0805       3.4399       31.604       -34.29       95.746      -109.17       47.142      -45.616</span>
+<span class="go">       1.0805       3.4399        29.45      -31.898       95.746      -109.17       44.233      -42.616</span>
+<span class="go">       1.4204     -0.85454       34.477      -38.276       102.69      -109.17       44.233      -45.616</span>
+<span class="go">       1.4204     -0.85454       28.732      -31.898       101.83      -108.24       37.445      -38.616</span>
+<span class="go">  Columns 9 through 12</span>
+<span class="go">            0      -20.594       20.594            0</span>
+<span class="go">            0       -11.41        11.41            0</span>
+<span class="go">            0      -13.925       13.925            0</span>
+<span class="go">      -6.2713      -6.2713       11.288       1.2543</span>
+<span class="go">            0      -6.9083       11.514       1.1514</span>
+<span class="go">            0       -6.422        3.211       8.5627</span>
+<span class="go">            0      -6.1876       3.0938       8.2501</span>
+<span class="go">            0           -6            0           11</span>
+<span class="go">           -8           -8            2           11</span>
+<span class="go">            0          -16            0           13</span>
+<span class="go">            3       3.1162      -24.622       18.505</span>
+<span class="go">            0      -2.0893       60.013      -57.924</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stdFromPH</span> <span class="o">=</span> <span class="n">CdfFromPH</span><span class="p">(</span><span class="n">betap</span><span class="p">,</span> <span class="n">Bp</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mf">1.</span><span class="p">));</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">stdFromPH</span><span class="p">);</span>
+<span class="go">  Columns 1 through 8</span>
+<span class="go">      0.31678      0.57513      0.67546      0.74313       0.7949      0.83595       0.8688      0.89511</span>
+<span class="go">  Columns 9 through 11</span>
+<span class="go">      0.91618      0.93304      0.94652</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stmFromME</span> <span class="o">=</span> <span class="n">MomentsFromME</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span><span class="p">(</span><span class="n">stmFromME</span><span class="p">);</span>
+<span class="go">      0.23252      0.20069      0.26684      0.47402       1.0523</span>
+</pre></div>
+</div>
+<p>For Mathematica:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span> <span class="o">=</span> <span class="p">{{</span><span class="o">-</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">},{</span><span class="mf">6.</span><span class="p">,</span> <span class="o">-</span><span class="mf">25.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">},{</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">},{</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">},{</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="mf">13.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">},{</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="o">-</span><span class="mf">26.</span><span class="p">}};</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vRin</span> <span class="o">=</span> <span class="p">{</span><span class="mf">4.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">3.</span><span class="p">};</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vRout</span> <span class="o">=</span> <span class="p">{</span><span class="mf">6.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">3.</span><span class="p">,</span><span class="mf">2.</span><span class="p">};</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Rin</span> <span class="o">=</span> <span class="n">DiagonalMatrix</span><span class="p">[</span><span class="n">vRin</span><span class="p">];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Rout</span> <span class="o">=</span> <span class="n">DiagonalMatrix</span><span class="p">[</span><span class="n">vRout</span><span class="p">];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">fld</span><span class="p">,</span> <span class="n">flm</span><span class="p">}</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">[</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;flDistr&quot;</span><span class="p">,</span> <span class="n">Range</span><span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.1</span><span class="p">],</span> <span class="s">&quot;flMoms&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="go">&quot;Final Residual Error for Psi: &quot;3.552713678800501*^-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">fld</span><span class="p">];</span>
+<span class="go">{0.23662288834725298, 0.39264885436465424, 0.4953720074760106, 0.5780715681563571, 0.6469041669036231, 0.7044705767536769, 0.7526473904478992, 0.7929699724085515, 0.8267192438851823, 0.8549668265296148, 0.8786095927626414}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">flm</span><span class="p">];</span>
+<span class="go">{0.40636152724912705, 0.45459875335830063, 0.7660938906391563, 1.7219814531396151, 4.8383553122056435}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">alphap</span><span class="p">,</span> <span class="n">Ap</span><span class="p">}</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">[</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;flDistrPH&quot;</span><span class="p">];</span>
+<span class="go">&quot;Final Residual Error for Psi: &quot;3.552713678800501*^-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">alphap</span><span class="p">];</span>
+<span class="go">{0.6312437949552183, 0.1321333166975293}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">Ap</span><span class="p">];</span>
+<span class="go">{{-2.038729227705291, 0.41483299932786355},</span>
+<span class="go"> {12.100016650885564, -21.143102743484828}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">alpha</span><span class="p">,</span> <span class="n">A</span><span class="p">}</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">[</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;flDistrME&quot;</span><span class="p">];</span>
+<span class="go">&quot;Final Residual Error for Psi: &quot;3.552713678800501*^-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">alpha</span><span class="p">];</span>
+<span class="go">{0.09903292185295065, 0.6643441897997966}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">A</span><span class="p">];</span>
+<span class="go">{{-3.873888074242129, 2.265266300893395},</span>
+<span class="go"> {16.206146825973583, -19.30794389694799}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fldFromPH</span> <span class="o">=</span> <span class="n">CdfFromPH</span><span class="p">[</span><span class="n">alphap</span><span class="p">,</span> <span class="n">Ap</span><span class="p">,</span> <span class="n">Range</span><span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.1</span><span class="p">]];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">fldFromPH</span><span class="p">];</span>
+<span class="go">{0.2366228883472523, 0.3926488543646537, 0.49537200747600996, 0.5780715681563567, 0.6469041669036226, 0.7044705767536761, 0.752647390447899, 0.7929699724085515, 0.826719243885182, 0.8549668265296144, 0.8786095927626408}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flmFromME</span> <span class="o">=</span> <span class="n">MomentsFromME</span><span class="p">[</span><span class="n">alpha</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">flmFromME</span><span class="p">];</span>
+<span class="go">{0.406361527249127, 0.4545987533583005, 0.766093890639156, 1.7219814531396143, 4.838355312205641}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">std</span><span class="p">,</span> <span class="n">stm</span><span class="p">}</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">[</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;stDistr&quot;</span><span class="p">,</span> <span class="n">Range</span><span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.1</span><span class="p">],</span> <span class="s">&quot;stMoms&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="go">&quot;Final Residual Error for Psi: &quot;3.552713678800501*^-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">std</span><span class="p">];</span>
+<span class="go">{0.31678183878167165, 0.5751281366978114, 0.6754587240241274, 0.7431259359792002, 0.7948956352818286, 0.8359503921804168, 0.8687966127678342, 0.895110856527426, 0.9161817691938701, 0.9330411640536861, 0.9465218585049266}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">stm</span><span class="p">];</span>
+<span class="go">{0.2325226067816825, 0.20068950224745224, 0.26683979953080217, 0.47402477308795066, 1.052265707013926}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">betap</span><span class="p">,</span> <span class="n">Bp</span><span class="p">}</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">[</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;stDistrPH&quot;</span><span class="p">];</span>
+<span class="go">&quot;Final Residual Error for Psi: &quot;3.552713678800501*^-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">betap</span><span class="p">];</span>
+<span class="go">{0.2489256585531655, 0.030403121047365863, 0.06859400291252453, 0.02340757153618713, 0.21435625910163925, 0., 0., 0., 0., 0., 0., 0.0975315480674464}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">Bp</span><span class="p">];</span>
+<span class="go">{{-21.23237536623175, 2.4889979959671824, 2., 0., 4., 0., 0., 0., 1., 0., 2., 0.},</span>
+<span class="go"> {72.60009990531339, -135.85861646090896, 0., 2., 0., 4., 0., 0., 0., 1., 0., 2.},</span>
+<span class="go"> {6., 0., -29.077458455410582, 0.8296659986557274, 5., 0., 3., 0., 7., 0., 4., 0.},</span>
+<span class="go"> {0., 6., 24.20003330177113, -67.28620548696966, 0., 5., 0., 3., 0., 7., 0., 4.},</span>
+<span class="go"> {1., 0., 3., 0., -4., 0., 0., 0., 0., 0., 0., 0.},</span>
+<span class="go"> {0., 1., 0., 3., 0., -4., 0., 0., 0., 0., 0., 0.},</span>
+<span class="go"> {0., 0., 0., 0., 0., 0., -8., 0., 3., 0., 5., 0.},</span>
+<span class="go"> {0., 0., 0., 0., 0., 0., 0., -8., 0., 3., 0., 5.},</span>
+<span class="go"> {7., 0., 3., 0., 0., 0., 2., 0., -19.116187683115875, 1.2444989979835912, 1., 0.},</span>
+<span class="go"> {0., 7., 0., 3., 0., 0., 0., 2., 36.30004995265669, -76.42930823045448, 0., 1.},</span>
+<span class="go"> {7., 0., 8., 0., 0., 0., 3., 0., 8., 0., -30.077458455410582, 0.8296659986557274},</span>
+<span class="go"> {0., 7., 0., 8., 0., 0., 0., 3., 0., 8., 24.20003330177113, -68.28620548696966}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">beta</span><span class="p">,</span> <span class="n">B</span><span class="p">}</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">[</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;stDistrME&quot;</span><span class="p">];</span>
+<span class="go">&quot;Final Residual Error for Psi: &quot;3.552713678800501*^-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">beta</span><span class="p">];</span>
+<span class="go">{3.264004570026444*^-17, 0., 0.078831427608686, -0.08751888856574991, 0.09533889262153328, -1.1102230246251565*^-16, 0., -0.10977187523000154, 0.10977187523000154, -0.10977187523000154, 0.10977187523000154, 0.5965667295538591}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">B</span><span class="p">];</span>
+<span class="go">{{-22.232375366231746, -9.024334461376778, 12.676341281041134, -16.41886435303353, -10.248515585018609, 30.264973851239237, 0., 0., 0., -20.593606234218658, 20.593606234218658, 0.},</span>
+<span class="go"> {-7.885554013509164, -14., 12.876273100640667, -9.096994589077221, -5.678266707024877, 16.76853510958077, 0., 0., 0., -11.410041550630227, 11.410041550630227, 0.},</span>
+<span class="go"> {-7.209828938108562, 15.44329181707263, -18.07745845541058, -16.653045216976402, 4.824361648380197, 14.325098944679178, -4.955917721818842, 5.110876056418869, 0., -13.924887390711975, 13.924887390711975, 0.},</span>
+<span class="go"> {-6.494153631516062, 13.910331368099698, 45.22483399646519, -88.75656159121243, 8.12591699549531, 15.246825395741896, -9.328920246280369, 9.620610711320927, -6.271324797933972, -6.27132479793397, 11.288384636281148, 1.2542649595867943},</span>
+<span class="go"> {-5.17874381712221, 9.94388397950392, 41.78794639107936, -50.49678710251786, -22.61805543038884, 13.996231507413134, -8.56373206173128, 3.0745666597174584, 0., -6.90831656703395, 11.513860945056583, 1.1513860945056584},</span>
+<span class="go"> {1.156466847093981, 9.243874525368991, 33.46570969180691, -40.968532043409766, 105.26888080212088, -123.84766338168792, -13.15028655062144, 9.280128382401386, 0., -6.42199885465433, 3.210999427327165, 8.562665139539106},</span>
+<span class="go"> {1.1142572671540418, 8.906484775101795, 32.24425353676651, -39.473232344457195, 97.84400096052254, -111.61936991988053, -21.670317693073674, 14.097752082035752, 0., -6.187604003897572, 3.093802001948786, 8.250138671863432},</span>
+<span class="go"> {1.0804737340516644, 5.280411661151828, 29.449994310245835, -31.898192751799968, 93.14039968197055, -109.16943402785212, 47.141886678532906, -53.61588779389599, 0., -6., 0., 11.},</span>
+<span class="go"> {1.0804737340516646, 3.4399275659085404, 31.604410296403845, -34.29003187404438, 95.74595485960887, -109.16943402785212, 47.141886678532906, -45.61588779389599, -8., -8.000000000000002, 2.0000000000000018, 11.},</span>
+<span class="go"> {1.080473734051665, 3.4399275659085404, 29.449994310245838, -31.898192751799975, 95.74595485960887, -109.16943402785212, 44.23284466668765, -42.61588779389599, 0., -16., 0., 13.000000000000002},</span>
+<span class="go"> {1.4203850599450722, -0.854535322992466, 34.47696494461453, -38.276430411118405, 102.69410199997778, -109.16943402785212, 44.23284466668765, -45.61588779389599, 3., 3.116187683115877, -24.621664222726388, 18.505476539610513},</span>
+<span class="go"> {1.4203850599450727, -0.854535322992466, 28.731855648193164, -31.89819275179997, 101.82558360743165, -108.23514547754328, 37.44507997238203, -38.61588779389599, 0., -2.089346473248271, 60.01317816409224, -57.92383169084397}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stdFromPH</span> <span class="o">=</span> <span class="n">CdfFromPH</span><span class="p">[</span><span class="n">betap</span><span class="p">,</span> <span class="n">Bp</span><span class="p">,</span> <span class="n">Range</span><span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.1</span><span class="p">]];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">stdFromPH</span><span class="p">];</span>
+<span class="go">{0.31678183878167143, 0.5751281366978112, 0.6754587240241272, 0.7431259359792002, 0.7948956352818284, 0.8359503921804168, 0.8687966127678343, 0.8951108565274261, 0.9161817691938701, 0.9330411640536861, 0.9465218585049268}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stmFromME</span> <span class="o">=</span> <span class="n">MomentsFromME</span><span class="p">[</span><span class="n">beta</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">[</span><span class="n">stmFromME</span><span class="p">];</span>
+<span class="go">{0.23252260678168227, 0.2006895022474516, 0.26683979953080084, 0.47402477308794727, 1.0522657070139159}</span>
+</pre></div>
+</div>
+<p>For Python/Numpy:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="o">-</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],[</span><span class="mf">6.</span><span class="p">,</span> <span class="o">-</span><span class="mf">25.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">],[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">],[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="mf">13.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="o">-</span><span class="mf">26.</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vRin</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mf">4.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">3.</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vRout</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mf">6.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">3.</span><span class="p">,</span><span class="mf">2.</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Rin</span> <span class="o">=</span> <span class="n">Diag</span><span class="p">(</span><span class="n">vRin</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Rout</span> <span class="o">=</span> <span class="n">Diag</span><span class="p">(</span><span class="n">vRout</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fld</span><span class="p">,</span> <span class="n">flm</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;flDistr&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="s">&quot;flMoms&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">Final Residual Error for G:  6.661338147750939e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">fld</span><span class="p">)</span>
+<span class="go">[ 0.23662  0.39265  0.49537  0.57807  0.6469   0.70447  0.75265  0.79297  0.82672  0.85497  0.87861]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">flm</span><span class="p">)</span>
+<span class="go">[0.406361527249128, 0.45459875335830258, 0.76609389063916067, 1.7219814531396287, 4.8383553122056897]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alphap</span><span class="p">,</span> <span class="n">Ap</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;flDistrPH&quot;</span><span class="p">)</span>
+<span class="go">Final Residual Error for G:  6.661338147750939e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">alphap</span><span class="p">)</span>
+<span class="go">[[ 0.63124  0.13213]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">Ap</span><span class="p">)</span>
+<span class="go">[[ -2.03873   0.41483]</span>
+<span class="go"> [ 12.10002 -21.1431 ]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alpha</span><span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;flDistrME&quot;</span><span class="p">)</span>
+<span class="go">Final Residual Error for G:  6.661338147750939e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+<span class="go">[[ 0.09903  0.66434]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="go">[[ -3.87389   2.26527]</span>
+<span class="go"> [ 16.20615 -19.30794]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fldFromPH</span> <span class="o">=</span> <span class="n">CdfFromPH</span><span class="p">(</span><span class="n">alphap</span><span class="p">,</span> <span class="n">Ap</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">fldFromPH</span><span class="p">)</span>
+<span class="go">[ 0.23662  0.39265  0.49537  0.57807  0.6469   0.70447  0.75265  0.79297  0.82672  0.85497  0.87861]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flmFromME</span> <span class="o">=</span> <span class="n">MomentsFromME</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">flmFromME</span><span class="p">)</span>
+<span class="go">[0.40636152724912805, 0.45459875335830258, 0.76609389063916078, 1.7219814531396285, 4.8383553122056906]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">std</span><span class="p">,</span> <span class="n">stm</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;stDistr&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="s">&quot;stMoms&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">Final Residual Error for G:  6.661338147750939e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">std</span><span class="p">)</span>
+<span class="go">[ 0.31678  0.57513  0.67546  0.74313  0.7949   0.83595  0.8688   0.89511  0.91618  0.93304  0.94652]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">stm</span><span class="p">)</span>
+<span class="go">[0.23252260678168307, 0.20068950224745297, 0.26683979953080317, 0.47402477308795288, 1.0522657070139314]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">betap</span><span class="p">,</span> <span class="n">Bp</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;stDistrPH&quot;</span><span class="p">)</span>
+<span class="go">Final Residual Error for G:  6.661338147750939e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">betap</span><span class="p">)</span>
+<span class="go">[[ 0.24893  0.0304   0.06859  0.02341  0.21436  0.       0.       0.       0.       0.       0.       0.09753]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">Bp</span><span class="p">)</span>
+<span class="go">[[ -21.23238    2.489      2.         0.         4.         0.         0.         0.         1.         0.         2.         0.     ]</span>
+<span class="go"> [  72.6001  -135.85862    0.         2.         0.         4.         0.         0.         0.         1.         0.         2.     ]</span>
+<span class="go"> [   6.         0.       -29.07746    0.82967    5.         0.         3.         0.         7.         0.         4.         0.     ]</span>
+<span class="go"> [   0.         6.        24.20003  -67.28621    0.         5.         0.         3.         0.         7.         0.         4.     ]</span>
+<span class="go"> [   1.         0.         3.         0.        -4.         0.         0.         0.         0.         0.         0.         0.     ]</span>
+<span class="go"> [   0.         1.         0.         3.         0.        -4.         0.         0.         0.         0.         0.         0.     ]</span>
+<span class="go"> [   0.         0.         0.         0.         0.         0.        -8.         0.         3.         0.         5.         0.     ]</span>
+<span class="go"> [   0.         0.         0.         0.         0.         0.         0.        -8.         0.         3.         0.         5.     ]</span>
+<span class="go"> [   7.         0.         3.         0.         0.         0.         2.         0.       -19.11619    1.2445     1.         0.     ]</span>
+<span class="go"> [   0.         7.         0.         3.         0.         0.         0.         2.        36.30005  -76.42931    0.         1.     ]</span>
+<span class="go"> [   7.         0.         8.         0.         0.         0.         3.         0.         8.         0.       -30.07746    0.82967]</span>
+<span class="go"> [   0.         7.         0.         8.         0.         0.         0.         3.         0.         8.        24.20003  -68.28621]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">beta</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="n">FluidQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Rin</span><span class="p">,</span> <span class="n">Rout</span><span class="p">,</span> <span class="s">&quot;stDistrME&quot;</span><span class="p">)</span>
+<span class="go">Final Residual Error for G:  6.661338147750939e-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
+<span class="go">[[ 0.       0.       0.07883 -0.08752  0.09534  0.       0.      -0.10977  0.10977 -0.10977  0.10977  0.59657]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="go">[[ -22.23238   -9.02433   12.67634  -16.41886  -10.24852   30.26497    0.         0.         0.       -20.59361   20.59361    0.     ]</span>
+<span class="go"> [  -7.88555  -14.        12.87627   -9.09699   -5.67827   16.76854    0.         0.         0.       -11.41004   11.41004    0.     ]</span>
+<span class="go"> [  -7.20983   15.44329  -18.07746  -16.65305    4.82436   14.3251    -4.95592    5.11088    0.       -13.92489   13.92489    0.     ]</span>
+<span class="go"> [  -6.49415   13.91033   45.22483  -88.75656    8.12592   15.24683   -9.32892    9.62061   -6.27132   -6.27132   11.28838    1.25426]</span>
+<span class="go"> [  -5.17874    9.94388   41.78795  -50.49679  -22.61806   13.99623   -8.56373    3.07457    0.        -6.90832   11.51386    1.15139]</span>
+<span class="go"> [   1.15647    9.24387   33.46571  -40.96853  105.26888 -123.84766  -13.15029    9.28013    0.        -6.422      3.211      8.56267]</span>
+<span class="go"> [   1.11426    8.90648   32.24425  -39.47323   97.844   -111.61937  -21.67032   14.09775    0.        -6.1876     3.0938     8.25014]</span>
+<span class="go"> [   1.08047    5.28041   29.44999  -31.89819   93.1404  -109.16943   47.14189  -53.61589    0.        -6.         0.        11.     ]</span>
+<span class="go"> [   1.08047    3.43993   31.60441  -34.29003   95.74595 -109.16943   47.14189  -45.61589   -8.        -8.         2.        11.     ]</span>
+<span class="go"> [   1.08047    3.43993   29.44999  -31.89819   95.74595 -109.16943   44.23284  -42.61589    0.       -16.         0.        13.     ]</span>
+<span class="go"> [   1.42039   -0.85454   34.47696  -38.27643  102.6941  -109.16943   44.23284  -45.61589    3.         3.11619  -24.62166   18.50548]</span>
+<span class="go"> [   1.42039   -0.85454   28.73186  -31.89819  101.82558 -108.23515   37.44508  -38.61589    0.        -2.08935   60.01318  -57.92383]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stdFromPH</span> <span class="o">=</span> <span class="n">CdfFromPH</span><span class="p">(</span><span class="n">betap</span><span class="p">,</span> <span class="n">Bp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">stdFromPH</span><span class="p">)</span>
+<span class="go">[ 0.31678  0.57513  0.67546  0.74313  0.7949   0.83595  0.8688   0.89511  0.91618  0.93304  0.94652]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stmFromME</span> <span class="o">=</span> <span class="n">MomentsFromME</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">stmFromME</span><span class="p">)</span>
+<span class="go">[0.23252260678168368, 0.20068950224745336, 0.2668397995308035, 0.47402477308795293, 1.0522657070139294]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="FluFluQueue.html" class="btn btn-neutral float-right" title="butools.queues.FluFluQueue" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="" class="btn btn-neutral" title="butools.queues.FluidQueue" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2015, The BuTools Team.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/copybutton.js"></script>
+      <script type="text/javascript" src="_static/jquery.func_toggle.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

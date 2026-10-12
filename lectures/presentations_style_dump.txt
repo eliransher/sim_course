@@ -1,0 +1,174 @@
+--- SLIDE 0 layout=Title Slide ---
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Lesson 1
+shape type=AUTO_SHAPE (1) name= | text=Simulation as a Tool for Thinking and Decisions
+shape type=AUTO_SHAPE (1) name= | text=From probability experiments and the central limit theorem to simulation-based optimization in queueing systems
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Part A
+shape type=AUTO_SHAPE (1) name= | text=Sampling, distributions, and sample averages
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Part B
+shape type=AUTO_SHAPE (1) name= | text=Why simulation is useful for complex queueing systems
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Core message
+shape type=AUTO_SHAPE (1) name= | text=A complex model becomes an experiment we can run
+shape type=AUTO_SHAPE (1) name= | text=Lesson 1 | Simulation | 1
+--- SLIDE 1 layout=Title Slide ---
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Motivation
+shape type=AUTO_SHAPE (1) name= | text=Why use simulation?
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=When formulas exist
+shape type=AUTO_SHAPE (1) name= | text=Analytical results are exact and fast, but they require a system simple enough to solve.
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=When systems get messy
+shape type=AUTO_SHAPE (1) name= | text=Queueing, logistics, and production combine randomness, constraints, and operating rules.
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=What simulation adds
+shape type=AUTO_SHAPE (1) name= | text=Run the system, measure performance, compare alternatives, and choose a policy.
+shape type=AUTO_SHAPE (1) name= | text=Simulation does not replace mathematical thinking. It extends it to systems where the closed-form model is too limited.
+shape type=AUTO_SHAPE (1) name= | text=Lesson 1 | Simulation | 2
+--- SLIDE 2 layout=Title Slide ---
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Part A | Basic simulation
+shape type=AUTO_SHAPE (1) name= | text=A small probability example
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Question
+shape type=AUTO_SHAPE (1) name= | text=Flip a coin until both heads and tails have appeared. How many flips are needed on average?
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Simulation
+shape type=AUTO_SHAPE (1) name= | text=Run 100,000 independent trials and count the number of flips in each trial.
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=3
+shape type=AUTO_SHAPE (1) name= | text=Theoretical expectation / and simulation estimate
+shape type=AUTO_SHAPE (1) name= | text=Here simulation confirms a result we can compute. Later, the same idea helps when no simple formula is available.
+shape type=AUTO_SHAPE (1) name= | text=Lesson 1 | Simulation | 3
+--- SLIDE 3 layout=Title Slide ---
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Part A | Distributions
+shape type=AUTO_SHAPE (1) name= | text=Central limit theorem: sample averages converge
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Binomial
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Geometric
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Exponential
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Erlang
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Hyper-Erlang PH
+shape type=AUTO_SHAPE (1) name= | text=The original distribution may be discrete, continuous, skewed, or multi-modal. When we average many independent samples, the distribution of the avera
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Why this matters
+shape type=AUTO_SHAPE (1) name= | text=Simulation lets us see statistical behavior before we rely on a convenient analytical formula.
+shape type=AUTO_SHAPE (1) name= | text=Lesson 1 | Simulation | 4
+--- SLIDE 4 layout=Title Slide ---
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Part A | CLT in action
+shape type=AUTO_SHAPE (1) name= | text=Hyper-Erlang: changing the averaging sample size
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=CHART (3) name=Chart
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=What changes?
+shape type=AUTO_SHAPE (1) name= | text=Moving from 2 to 50 samples makes the average tighter and more symmetric.
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Key idea
+shape type=AUTO_SHAPE (1) name= | text=Even a complex PH distribution produces averages that look nearly normal.
+shape type=AUTO_SHAPE (1) name= | text=Lesson 1 | Simulation | 5
+--- SLIDE 5 layout=Title Slide ---
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Part B | Complex systems
+shape type=AUTO_SHAPE (1) name= | text=Queueing systems: where simulation starts paying off
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=System
+shape type=AUTO_SHAPE (1) name= | text=Customers arrive, wait, receive service, and leave.
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Randomness
+shape type=AUTO_SHAPE (1) name= | text=Arrival and service times vary from customer to customer.
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Decision
+shape type=AUTO_SHAPE (1) name= | text=Service speed, number of servers, or a waiting-time constraint.
+shape type=AUTO_SHAPE (1) name= | text=With SimPy, the notebook runs the system, measures waiting and sojourn times, and compares operational alternatives.
+shape type=AUTO_SHAPE (1) name= | text=Lesson 1 | Simulation | 6
+--- SLIDE 6 layout=Title Slide ---
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Single-server queue
+shape type=AUTO_SHAPE (1) name= | text=Optimization 1: choose the service rate
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=CHART (3) name=Chart
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Goal
+shape type=AUTO_SHAPE (1) name= | text=Faster servers cost more, so pick the slowest server that still satisfies the constraint.
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Result
+shape type=AUTO_SHAPE (1) name= | text=The first feasible service rate in the tested grid is about 0.95.
+shape type=AUTO_SHAPE (1) name= | text=Lesson 1 | Simulation | 7
+--- SLIDE 7 layout=Title Slide ---
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Hyper-Erlang with 50 phases
+shape type=AUTO_SHAPE (1) name= | text=The stochastic model: PH densities
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=CHART (3) name=Chart
+shape type=CHART (3) name=Chart
+shape type=AUTO_SHAPE (1) name= | text=The simulation is not limited to exponential service times. Rich PH distributions can be fed directly into the model.
+shape type=AUTO_SHAPE (1) name= | text=Lesson 1 | Simulation | 8
+--- SLIDE 8 layout=Title Slide ---
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Constrained queueing decision
+shape type=AUTO_SHAPE (1) name= | text=Optimization 2: how many servers should be opened?
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=CHART (3) name=Chart
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Problem
+shape type=AUTO_SHAPE (1) name= | text=Choose the smallest number of servers such that E[Wq] < 2.
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Simulation result
+shape type=AUTO_SHAPE (1) name= | text=3 servers are not enough; 4 servers are the first feasible solution.
+shape type=AUTO_SHAPE (1) name= | text=The y-axis is capped at 6 so the constraint crossing is readable; the 1-server and 2-server cases are far above the target.
+shape type=AUTO_SHAPE (1) name= | text=Lesson 1 | Simulation | 9
+--- SLIDE 9 layout=Title Slide ---
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Summary
+shape type=AUTO_SHAPE (1) name= | text=What should students take away?
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Simulation is an experiment
+shape type=AUTO_SHAPE (1) name= | text=Define a system, run it many times, and measure average behavior.
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Randomness becomes measurable
+shape type=AUTO_SHAPE (1) name= | text=Histograms, averages, constraints, and confidence intervals turn noise into evidence.
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Complex systems become comparable
+shape type=AUTO_SHAPE (1) name= | text=Change service rate, server count, or operating rules, and compare performance.
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=
+shape type=AUTO_SHAPE (1) name= | text=Optimization by simulation
+shape type=AUTO_SHAPE (1) name= | text=A reliable model plus a clear performance target can guide operational decisions.
+shape type=AUTO_SHAPE (1) name= | text=The next step is to build richer models and ask not only what happens, but what should we do?
+shape type=AUTO_SHAPE (1) name= | text=Lesson 1 | Simulation | 10
