@@ -12,3 +12,8 @@ venv/
 # lectures/notebooks: only the notebooks themselves
 lectures/notebooks/*
 !lectures/notebooks/*.ipynb
+
+# assignments: no solutions, and no copies of the top-level Images/pkls
+assignments/**/*solution*.ipynb
+assignments/*/Images/
+assignments/*/pkls/
