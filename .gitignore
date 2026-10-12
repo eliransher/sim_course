@@ -17,3 +17,6 @@ lectures/notebooks/*
 assignments/**/*solution*.ipynb
 assignments/*/Images/
 assignments/*/pkls/
+
+# local only
+general/
