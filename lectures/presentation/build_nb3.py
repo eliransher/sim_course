@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Deck for notebook_3_KPIs.ipynb — cost functions, KPIs, estimators, run length, Kendall notation."""
 import os
-from deckbuilder import Deck
+from deckbuilder import Deck, make_formula
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 A = os.path.join(HERE, "assets", "nb3")
@@ -199,6 +199,30 @@ d.content(
         ("התוצאה שלנו", "ככל שהסימולציה ארוכה יותר — רווח הסמך צר יותר, כמצופה."),
     ],
     kicker="Choosing run length",
+)
+
+# 18b. CI definition ------------------------------------------------------------
+d.figure_text(
+    "רווח סמך לתוחלת זמן ההמתנה",
+    make_formula(A, "ci_formula", [
+        r"\bar{x} \;\pm\; t_{0.975,\,R-1}\,\frac{s}{\sqrt{R}}",
+        r"\mathrm{CI\ length} = 2\,t_{0.975,\,R-1}\,\frac{s}{\sqrt{R}}"]),
+    [
+        ("החזרות", "לכל אורך סימולציה יש 10 חזרות בלתי תלויות, וכל חזרה נותנת ממוצע המתנה אחד."),
+        ("רמת ביטחון", "95% , עם ערך קריטי מהתפלגות סטודנט עם 9 דרגות חופש."),
+        ("מה מודדים", "את אורך רווח הסמך: ככל שהוא קצר יותר, האומד מדויק יותר."),
+    ],
+    kicker="Confidence interval · R = 10 replications",
+    img_h=2.0,
+)
+
+# 18c. CI length vs. run length (values from notebook cell 25) --------------------
+d.figure(
+    "אורך רווח הסמך כפונקציה של אורך הסימולציה",
+    os.path.join(A, "ci_length.png"),
+    kicker="CI length vs. run length",
+    note="פי 200 יותר הגעות מצמצמים את רווח הסמך פי 13 בערך, קרוב לכלל השורש: פי 14.",
+    max_h=4.1,
 )
 
 # 19. Kendall notation ---------------------------------------------------------
