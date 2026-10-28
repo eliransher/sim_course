@@ -205,14 +205,14 @@ d.content(
 d.figure_text(
     "רווח סמך לתוחלת זמן ההמתנה",
     make_formula(A, "ci_formula", [
-        r"\bar{x} \;\pm\; t_{0.975,\,R-1}\,\frac{s}{\sqrt{R}}",
-        r"\mathrm{CI\ length} = 2\,t_{0.975,\,R-1}\,\frac{s}{\sqrt{R}}"]),
+        r"\bar{x} \;\pm\; t_{0.975,\,n-1}\,\frac{s}{\sqrt{n}}",
+        r"\mathrm{CI\ length} = 2\,t_{0.975,\,n-1}\,\frac{s}{\sqrt{n}}"]),
     [
         ("החזרות", "לכל אורך סימולציה יש 10 חזרות בלתי תלויות, וכל חזרה נותנת ממוצע המתנה אחד."),
         ("רמת ביטחון", "95% , עם ערך קריטי מהתפלגות סטודנט עם 9 דרגות חופש."),
         ("מה מודדים", "את אורך רווח הסמך: ככל שהוא קצר יותר, האומד מדויק יותר."),
     ],
-    kicker="Confidence interval · R = 10 replications",
+    kicker="Confidence interval · n = 10 replications",
     img_h=2.0,
 )
 

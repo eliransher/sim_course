@@ -29,8 +29,8 @@ ax.legend(frameon=False, fontsize=12, loc="upper right")
 fig.tight_layout(); fig.savefig(os.path.join(A, "ci_length.png"), dpi=200); plt.close(fig)
 
 f = make_formula(A, "ci_formula", [
-    r"\bar{x} \;\pm\; t_{0.975,\,R-1}\,\frac{s}{\sqrt{R}}",
-    r"\mathrm{CI\ length} = 2\,t_{0.975,\,R-1}\,\frac{s}{\sqrt{R}}"], fontsize=30)
+    r"\bar{x} \;\pm\; t_{0.975,\,n-1}\,\frac{s}{\sqrt{n}}",
+    r"\mathrm{CI\ length} = 2\,t_{0.975,\,n-1}\,\frac{s}{\sqrt{n}}"], fontsize=30)
 
 d = Deck(footer_label="שיעור 3 · KPIs ואומדים")
 d.figure_text(
@@ -41,7 +41,7 @@ d.figure_text(
         ("רמת ביטחון", "95% , עם ערך קריטי מהתפלגות סטודנט עם 9 דרגות חופש."),
         ("מה מודדים", "את אורך רווח הסמך: ככל שהוא קצר יותר, האומד מדויק יותר."),
     ],
-    kicker="Confidence interval · R = 10 replications",
+    kicker="Confidence interval · n = 10 replications",
     img_h=2.0,
 )
 d.figure(
