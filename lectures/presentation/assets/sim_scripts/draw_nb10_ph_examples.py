@@ -1,7 +1,7 @@
 """Figures for the PH-examples slides added to deck 10 (all examples have mean 1).
 
 Erlang(4, rate 4); hyper-exponential alpha=(0.8,0.2), rates (4, 0.25);
-hyper-Erlang: w.p. 1/2 Erlang(4, rate 10), w.p. 1/2 Erlang(12, rate 7.5).
+hyper-Erlang: w.p. 1/4 Erlang(4, rate 16), w.p. 3/4 Erlang(5, rate 4).
 """
 import os
 from math import factorial
@@ -48,8 +48,8 @@ EXAMPLES = {
     "erlang": (np.array([1., 0, 0, 0]), erlang_T(4, 4.0)),
     "hyper": (np.array([0.8, 0.2]), np.diag([-4.0, -0.25])),
 }
-_a = np.zeros(16); _a[0] = 0.5; _a[4] = 0.5
-EXAMPLES["hyerl"] = (_a, block(erlang_T(4, 10.0), erlang_T(12, 7.5)))
+_a = np.zeros(9); _a[0] = 0.25; _a[4] = 0.75
+EXAMPLES["hyerl"] = (_a, block(erlang_T(4, 16.0), erlang_T(5, 4.0)))
 
 
 # ---------------------------------------------------------------- drawing helpers
@@ -132,42 +132,36 @@ save(fig, "ph_ex_hyper.png")
 fig, ax = plt.subplots(figsize=(14, 3.8)); ax.set_aspect("equal"); ax.axis("off")
 ax.plot(0, 0, "o", color=GREY, ms=9)
 ax.text(-0.22, 0, "start", ha="right", va="center", fontsize=13, color=GREY)
-yt, yb, sp, R = 0.95, -0.95, 1.15, 0.3
+yt, yb, sp, R = 0.95, -0.95, 1.05, 0.3
 top = [1.7 + sp * i for i in range(4)]
-bot_lab = ["5", "6", "7", None, "16"]
 bot = [1.7 + sp * i for i in range(5)]
-arr(ax, (0.1, 0.06), (top[0] - R - 0.03, yt - 0.12), GREY, "½", (0.62, 0.72), fs=16)
-arr(ax, (0.1, -0.06), (bot[0] - R - 0.03, yb + 0.12), GREY, "½", (0.62, -0.72), fs=16)
+arr(ax, (0.1, 0.06), (top[0] - R - 0.03, yt - 0.12), GREY, "¼", (0.62, 0.72), fs=16)
+arr(ax, (0.1, -0.06), (bot[0] - R - 0.03, yb + 0.12), GREY, "¾", (0.62, -0.72), fs=16)
+end_x = bot[-1] + 1.15
 for i, xx in enumerate(top):
     circ(ax, xx, yt, str(i + 1), r=R, fs=13)
     if i < 3:
-        arr(ax, (xx + R, yt), (xx + sp - R, yt), NAVY, "10", (xx + sp / 2, yt + 0.3), fs=12)
-end_x = bot[-1] + 1.15
-arr(ax, (top[-1] + R, yt), (end_x - 0.05, 0.12), GREEN, "10", (top[-1] + 1.05, yt + 0.02), fs=12)
+        arr(ax, (xx + R, yt), (xx + sp - R, yt), NAVY, "16", (xx + sp / 2, yt + 0.3), fs=12)
+arr(ax, (top[-1] + R, yt), (end_x - 0.05, 0.12), GREEN, "16", (top[-1] + 1.05, yt + 0.12), fs=12)
 for i, xx in enumerate(bot):
-    if bot_lab[i] is None:
-        ax.text(xx, yb, "⋯", ha="center", va="center", fontsize=20, color=NAVY)
-        arr(ax, (xx + 0.25, yb), (bot[i + 1] - R, yb), NAVY)
-        continue
-    circ(ax, xx, yb, bot_lab[i], r=R, fs=13)
-    if i < 3:
-        nxt = bot[i + 1] - (R if bot_lab[i + 1] else 0.25)
-        arr(ax, (xx + R, yb), (nxt, yb), NAVY, "7.5" if bot_lab[i + 1] else None, (xx + sp / 2, yb + 0.3), fs=12)
-arr(ax, (bot[-1] + R, yb), (end_x - 0.05, -0.12), GREEN, "7.5", (bot[-1] + 0.95, yb - 0.02), fs=12)
+    circ(ax, xx, yb, str(i + 5), r=R, fs=13)
+    if i < 4:
+        arr(ax, (xx + R, yb), (xx + sp - R, yb), NAVY, "4", (xx + sp / 2, yb + 0.3), fs=12)
+arr(ax, (bot[-1] + R, yb), (end_x - 0.05, -0.12), GREEN, "4", (bot[-1] + 0.75, yb + 0.05), fs=12)
 ax.text(end_x + 0.08, 0, "done", va="center", fontsize=14, color=GREEN)
-ax.text((top[0] + top[-1]) / 2, yt + 0.7, "4 phases, rate 10", ha="center", fontsize=12, color=GREY)
-ax.text((bot[0] + bot[-1]) / 2, yb - 0.72, "12 phases, rate 7.5", ha="center", fontsize=12, color=GREY)
-# matrices in block form
-X = 10.4
-matrix(ax, X, 1.75, r"$\alpha$ =", [["½", "0", "0", "0", "½", "0", "⋯", "0"]], cw=0.45, fs=13)
+ax.text((top[0] + top[-1]) / 2, yt + 0.7, "4 phases, rate 16", ha="center", fontsize=12, color=GREY)
+ax.text((bot[0] + bot[-1]) / 2, yb - 0.72, "5 phases, rate 4", ha="center", fontsize=12, color=GREY)
+# matrices: alpha in full, T in block form, both blocks in full
+X = 10.0
+matrix(ax, X, 1.85, r"$\alpha$ =", [["¼", "0", "0", "0", "¾", "0", "0", "0", "0"]], cw=0.42, fs=13)
 matrix(ax, X, 0.55, r"$T$ =", [[r"$T_1$", "0"], ["0", r"$T_2$"]], cw=0.62, ch=0.42, fs=14)
 X2 = X + 2.9
-r1 = [["−10", "10", "0", "0"], ["0", "−10", "10", "0"], ["0", "0", "−10", "10"], ["0", "0", "0", "−10"]]
-matrix(ax, X2, 1.05, r"$T_1$ =", r1, cw=0.66, ch=0.34, fs=11)
-r2 = [["−7.5", "7.5", "", ""], ["", "⋱", "⋱", ""], ["", "", "−7.5", "7.5"], ["", "", "", "−7.5"]]
-matrix(ax, X2, -0.6, r"$T_2$ =", r2, cw=0.66, ch=0.34, fs=11)
-ax.text(X2 + 0.28 + 2.0, -2.15, "(12 × 12)", ha="center", fontsize=11, color=GREY)
-ax.set_xlim(-1.3, 16.3); ax.set_ylim(-2.4, 2.05)
+r1 = [["−16", "16", "0", "0"], ["0", "−16", "16", "0"], ["0", "0", "−16", "16"], ["0", "0", "0", "−16"]]
+matrix(ax, X2, 1.25, r"$T_1$ =", r1, cw=0.6, ch=0.34, fs=11)
+r2 = [["−4", "4", "0", "0", "0"], ["0", "−4", "4", "0", "0"], ["0", "0", "−4", "4", "0"],
+      ["0", "0", "0", "−4", "4"], ["0", "0", "0", "0", "−4"]]
+matrix(ax, X2, -0.5, r"$T_2$ =", r2, cw=0.5, ch=0.34, fs=11)
+ax.set_xlim(-1.3, 16.1); ax.set_ylim(-2.4, 2.15)
 save(fig, "ph_ex_hyerl.png")
 
 # ---------------------------------------------------------------- 4. densities
@@ -207,3 +201,40 @@ save(fig, "skewness_shapes.png")
 
 for k in EXAMPLES:
     print(k, {n: round(v, 4) for n, v in stats(*EXAMPLES[k]).items()})
+
+# ---------------------------------------------------------------- 6. jump probabilities: 3-phase PH with feedback
+# T = [[-4, 2, 1], [0, -2, 1], [1, 0, -3]],  t = -T1 = (1, 1, 2),  alpha = (1, 0, 0)
+from matplotlib.patches import FancyArrowPatch as FAP
+fig, ax = plt.subplots(figsize=(14, 3.9)); ax.set_aspect("equal"); ax.axis("off")
+P1, P2, P3, DN = (1.2, 0), (3.6, 1.1), (3.6, -1.1), (6.4, 0)
+R = 0.38
+arr(ax, (-0.3, 0), (P1[0] - R, 0), GREY, "start", (0.25, 0.3), fs=13)
+for p, lab, rate in [(P1, "1", "exit rate 4"), (P2, "2", "exit rate 2"), (P3, "3", "exit rate 3")]:
+    circ(ax, *p, lab, r=R)
+    ax.text(p[0], p[1] + (0.62 if p[1] >= 0 else -0.62), rate, ha="center", va="center", fontsize=11, color=GREY)
+ax.text(DN[0] + 0.05, 0, "done", va="center", fontsize=15, color=GREEN)
+def edge(p, q, lab, lxy, c=NAVY, rad=0.0):
+    ax.add_patch(FAP(p, q, arrowstyle="-|>", mutation_scale=18, lw=2.0, color=c,
+                     connectionstyle=f"arc3,rad={rad}", zorder=2))
+    ax.text(*lxy, lab, ha="center", va="center", fontsize=14, color=c, fontweight="bold")
+edge((P1[0] + 0.3, 0.24), (P2[0] - 0.36, P2[1] - 0.1), "½", (2.2, 0.85))
+edge((P1[0] + 0.3, -0.24), (P3[0] - 0.36, P3[1] + 0.1), "¼", (2.55, -0.38))
+edge((P2[0], P2[1] - R), (P3[0], P3[1] + R), "½", (3.85, 0.45))
+edge((P3[0] - 0.33, P3[1] - 0.2), (P1[0] - 0.05, -R), "⅓", (1.75, -1.45), c=VIOLET, rad=-0.35)
+edge((P1[0] + R, 0.0), (DN[0] - 0.05, 0.0), "¼", (5.0, 0.18), c=GREEN)
+edge((P2[0] + R, P2[1] - 0.1), (DN[0] - 0.05, 0.15), "½", (5.15, 0.85), c=GREEN)
+edge((P3[0] + R, P3[1] + 0.1), (DN[0] - 0.05, -0.15), "⅔", (5.15, -0.85), c=GREEN)
+# matrices
+X = 9.6
+matrix(ax, X, 1.55, r"$T$ =", [["−4", "2", "1"], ["0", "−2", "1"], ["1", "0", "−3"]], cw=0.55, ch=0.4, fs=13)
+matrix(ax, X, 0.0, r"$t$ =", [["1"], ["1"], ["2"]], cw=0.55, ch=0.4, fs=13)
+X2 = X + 3.3
+hdr = ["→1", "→2", "→3", "done"]
+for k, h in enumerate(hdr):
+    ax.text(X2 + 0.23 + (k + 0.5) * 0.62, 1.8, h, ha="center", va="center", fontsize=11,
+            color=GREEN if h == "done" else GREY)
+matrix(ax, X2, 1.55, "", [["0", "½", "¼", "¼"], ["0", "0", "½", "½"], ["⅓", "0", "0", "⅔"]], cw=0.62, ch=0.4, fs=13)
+ax.text(X2 + 0.25 + 2 * 0.62, -0.05, "jump probabilities\n(each row sums to 1)", ha="center", va="top",
+        fontsize=11, color=GREY)
+ax.set_xlim(-0.6, 16.4); ax.set_ylim(-2.0, 2.1)
+save(fig, "ph_jumps.png")
