@@ -236,7 +236,7 @@ d.table(
 
 d.figure_text(
     "הנוסחה מאשרת את הסימולציה",
-    formula("pk", [r"W_q = \frac{\rho}{1-\rho} \cdot \frac{1 + SCV_S}{2} \cdot E[S]"], fontsize=38),
+    formula("pk", [r"E[W_q] = \frac{\rho}{1-\rho} \cdot \frac{1 + SCV_S}{2} \cdot E[S]"], fontsize=38),
     [
         ("Pollaczek–Khinchine", "נוסחה סגורה לתור עם הגעות פואסון ושירות כללי."),
         ("עבור ארלנג", "הגורם השני הוא 0.6, ולכן זמן ההמתנה בתור הוא 1.40."),
